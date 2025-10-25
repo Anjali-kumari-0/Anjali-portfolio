@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { easeOut, motion } from "framer-motion";
 import { Briefcase, GraduationCap } from "lucide-react";
 
 export default function Experience() {
@@ -18,7 +18,7 @@ export default function Experience() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
+      transition: { duration: 0.8, ease: easeOut },
     },
   };
 

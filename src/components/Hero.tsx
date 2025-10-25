@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { easeInOut, easeOut, motion } from "framer-motion";
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 
 export default function Hero() {
@@ -18,7 +18,7 @@ export default function Hero() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: ["easeOut"] },
+      transition: { duration: 0.8, ease: [easeOut] },
     },
   };
 
@@ -29,7 +29,7 @@ export default function Hero() {
       transition: {
         duration: 4,
         repeat: Infinity,
-        ease: "easeInOut",
+        ease: easeInOut,
       },
     },
   };
