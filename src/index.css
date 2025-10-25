@@ -1,134 +1,159 @@
-/** @import must precede all other statements */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
 @import "tailwindcss";
-/* Removed @tailwind directives because they are not recognized by browsers directly. 
-   Make sure to use Tailwind's build process if you want to use these directives. */
 
-@layer base {
-  /**
-   * Tailwind CSS theme
-   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
-   * A different format will require also updating the theme in tailwind.config.ts.
+/* ध्यान दें: अब कोई tailwind.config.ts फ़ाइल नहीं है। 
+  सारा कॉन्फ़िगरेशन सीधे @theme ब्लॉक में है।
+*/
+@theme {
+  /*
+    ======================================
+    1. COLORS (रंग)
+    ======================================
+    हम OKLCH वैल्यूज़ का उपयोग कर रहे हैं।
+    Syntax: <namespace>-<name>: <value>
+    कलर के लिए namespace "color" का उपयोग किया जाता है।
   */
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+  --color-border: oklch(0.94 0.03 260);
+  --color-input: oklch(0.94 0.03 260);
+  --color-ring: oklch(0.2 0.05 260);
+  --color-background: oklch(1 0 0);
+  --color-foreground: oklch(0.2 0.05 260);
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+  --color-primary: oklch(0.2 0.05 260);
+  --color-primary-foreground: oklch(0.9 0.01 260);
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+  --color-secondary: oklch(0.94 0.01 260);
+  --color-secondary-foreground: oklch(0.2 0.05 260);
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+  --color-destructive: oklch(0.6 0.15 20);
+  --color-destructive-foreground: oklch(0.9 0.01 260);
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+  --color-muted: oklch(0.94 0.01 260);
+  --color-muted-foreground: oklch(0.5 0.02 260);
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+  --color-accent: oklch(0.94 0.01 260);
+  --color-accent-foreground: oklch(0.2 0.05 260);
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+  --color-popover: oklch(1 0 0);
+  --color-popover-foreground: oklch(0.2 0.05 260);
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+  --color-card: oklch(1 0 0);
+  --color-card-foreground: oklch(0.2 0.05 260);
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+  /* Sidebar Colors: The nested structure must be flattened */
+  --color-sidebar-default: oklch(0.2 0.05 280); 
+  --color-sidebar-foreground: oklch(0.9 0.01 280);
+  --color-sidebar-primary: oklch(0.9 0.01 280);
+  --color-sidebar-primary-foreground: oklch(0.2 0.05 280);
+  --color-sidebar-accent: oklch(0.25 0.05 280);
+  --color-sidebar-accent-foreground: oklch(0.9 0.01 280);
+  --color-sidebar-border: oklch(0.94 0.03 280);
+  --color-sidebar-ring: oklch(0.2 0.05 280);
 
-    --radius: 0.5rem;
+  /* Portfolio Colors: The nested structure must be flattened */
+  --color-portfolio-purple: oklch(0.4 0.15 300);
+  --color-portfolio-blue: oklch(0.5 0.15 240);
+  --color-portfolio-accent: oklch(0.7 0.1 80);
+  --color-portfolio-light: oklch(0.98 0.01 260);
 
-    --sidebar-background: 0 0% 98%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+  /*
+    ======================================
+    2. BORDER RADIUS (बॉर्डर रेडियस)
+    ======================================
+    radius namespace का उपयोग करें।
+    इससे rounded-lg, rounded-md आदि यूटिलिटीज़ बनेंगी।
+  */
+  --radius-lg: var(--radius, 0.5rem); /* Assuming --radius is defined in :root or similar */
+  --radius-md: calc(var(--radius-lg) - 2px);
+  --radius-sm: calc(var(--radius-lg) - 4px);
 
-    --sidebar-primary: 240 5.9% 10%;
 
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-
-    /* Portfolio Colors */
-    --portfolio-purple: 270 100% 60%;
-    --portfolio-blue: 210 100% 50%;
-    --portfolio-accent: 260 95% 60%;
-    --portfolio-light: 0 0% 98%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-
-    /* Portfolio Colors */
-    --portfolio-purple: 270 100% 60%;
-    --portfolio-blue: 210 100% 50%;
-    --portfolio-accent: 260 95% 60%;
-    --portfolio-light: 220 25% 20%;
-  }
+  /*
+    ======================================
+    3. CONTAINER (कंटेनर)
+    ======================================
+    container-padding और container-screens को सीधे कॉन्फ़िगर करें।
+  */
+  --container-padding: 2rem;
+  --container-screens-2xl: 1400px;
+  
+  
+  /*
+    ======================================
+    4. BACKGROUND IMAGE (ग्रेडिएंट्स)
+    ======================================
+    backgroundImage namespace का उपयोग करें।
+  */
+  --background-image-gradient-portfolio: linear-gradient(135deg, var(--color-portfolio-purple) 0%, var(--color-portfolio-blue) 100%);
+  --background-image-gradient-soft: linear-gradient(135deg, var(--color-portfolio-light) 0%, oklch(0.5 0.15 240 / 0.1) 100%);
 }
 
-@layer base {
-  /* * {
-    border-color: hsl(var(--border));
-    border-width: 1px;
-    border-style: solid;
-  } */
+/* ======================================
+  5. KEYFRAMES और ANIMATIONS
+  ======================================
+  ये सीधे @theme के अंदर परिभाषित नहीं होते। 
+  आपको keyframes को CSS के @keyframes नियम का उपयोग करके परिभाषित करना होगा, 
+  और फिर उन्हें @theme के अंदर animation namespace में मैप करना होगा।
+*/
 
-  /* body {
-    background-color: hsl(var(--background));
-    color: hsl(var(--foreground));
-  } */
+@keyframes accordion-down {
+  from { height: 0; }
+  to { height: var(--radix-accordion-content-height); }
+}
 
-  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
-    overflow-wrap: anywhere;
-    word-break: break-word;
-  }
+@keyframes accordion-up {
+  from { height: var(--radix-accordion-content-height); }
+  to { height: 0; }
+}
 
-  pre,
-  code {
-    overflow-x: auto;
-    white-space: pre;
-  }
+@keyframes fade-in {
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
+@keyframes slide-up {
+  0% { opacity: 0; transform: translateY(20px) }
+  100% { opacity: 1; transform: translateY(0) }
+}
+
+@keyframes slide-down {
+  0% { opacity: 0; transform: translateY(-20px) }
+  100% { opacity: 1; transform: translateY(0) }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) }
+  50% { transform: translateY(-20px) }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1 }
+  50% { opacity: 0.5 }
+}
+
+
+@theme {
+  /* Animation Mapping */
+  --animation-accordion-down: accordion-down 0.2s ease-out;
+  --animation-accordion-up: accordion-up 0.2s ease-out;
+  --animation-fade-in: fade-in 0.6s ease-out;
+  --animation-slide-up: slide-up 0.6s ease-out;
+  --animation-slide-down: slide-down 0.6s ease-out;
+  --animation-float: float 3s ease-in-out infinite;
+  --animation-pulse-slow: pulse-slow 2s ease-in-out infinite;
+}
+
+/*
+  ======================================
+  6. DARK MODE (डार्क मोड)
+  ======================================
+  आप डार्क मोड के लिए वैल्यूज़ को .dark क्लास के अंदर सेट करेंगे।
+*/
+.dark {
+  /* Dark Mode Colors (उदाहरण के लिए) */
+  --color-background: oklch(0.1 0.01 260);
+  --color-foreground: oklch(0.9 0.01 260);
+  --color-primary: oklch(0.9 0.01 260);
+  --color-primary-foreground: oklch(0.1 0.01 260);
+  /* ... अन्य dark mode variables ... */
 }
