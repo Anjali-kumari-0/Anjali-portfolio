@@ -1,5 +1,5 @@
+import { experienceData } from "@/Constant";
 import { easeOut, motion } from "framer-motion";
-import { Briefcase, GraduationCap } from "lucide-react";
 
 export default function Experience() {
   const containerVariants = {
@@ -22,58 +22,7 @@ export default function Experience() {
     },
   };
 
-  const experienceData = [
-    {
-      id: 1,
-      type: "job",
-      title: "Senior Frontend Engineer",
-      company: "Tech Innovations Inc.",
-      period: "2022 - Present",
-      description: "Leading frontend development team, architecting scalable React applications, mentoring junior developers, and implementing performance optimizations.",
-      skills: ["React", "TypeScript", "Team Leadership"],
-      icon: Briefcase,
-    },
-    {
-      id: 2,
-      type: "job",
-      title: "Frontend Developer",
-      company: "Digital Solutions Ltd.",
-      period: "2020 - 2022",
-      description: "Developed responsive web applications using React and Tailwind CSS, improved application performance by 40%, collaborated with design and backend teams.",
-      skills: ["React", "Tailwind CSS", "REST APIs"],
-      icon: Briefcase,
-    },
-    {
-      id: 3,
-      type: "education",
-      title: "Advanced Web Development",
-      company: "Online Learning Platform",
-      period: "2019 - 2020",
-      description: "Comprehensive bootcamp covering modern web development with focus on React, JavaScript, and full-stack development.",
-      skills: ["React", "JavaScript", "Node.js"],
-      icon: GraduationCap,
-    },
-    {
-      id: 4,
-      type: "job",
-      title: "Junior Frontend Developer",
-      company: "StartUp Hub",
-      period: "2019 - 2020",
-      description: "Developed UI components, fixed bugs, implemented new features in React applications, and improved code quality.",
-      skills: ["React", "HTML/CSS", "Git"],
-      icon: Briefcase,
-    },
-    {
-      id: 5,
-      type: "education",
-      title: "Bachelor of Technology",
-      company: "University of Tech",
-      period: "2015 - 2019",
-      description: "Computer Science degree with specialization in web technologies and software development.",
-      skills: ["Programming", "Web Dev", "Algorithms"],
-      icon: GraduationCap,
-    },
-  ];
+  
 
   return (
     <section id="experience" className="min-h-screen flex items-center py-20 px-4 sm:px-6 lg:px-8">
@@ -119,7 +68,7 @@ export default function Experience() {
 
           {/* Timeline Items */}
           <div className="space-y-8">
-            {experienceData.map((item, index) => {
+            {experienceData?.map((item, index) => {
               const Icon = item.icon;
               const isLeft = index % 2 === 0;
 
@@ -138,13 +87,13 @@ export default function Experience() {
                           <p className="text-sm font-semibold text-portfolio-purple dark:text-portfolio-accent">
                             {item.period}
                           </p>
-                          <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                          <h3 className="text-xl font-bold text-gray-300 dark:text-white">
                             {item.title}
                           </h3>
                           <p className="text-portfolio-purple dark:text-portfolio-accent font-medium">
                             {item.company}
                           </p>
-                          <p className="text-gray-600 dark:text-gray-400 text-sm">
+                          <p className="text-gray-400 dark:text-gray-400 text-sm">
                             {item.description}
                           </p>
                           <div className="flex flex-wrap gap-2 justify-end pt-2">
@@ -180,13 +129,13 @@ export default function Experience() {
                           <p className="text-sm font-semibold text-portfolio-purple dark:text-portfolio-accent">
                             {item.period}
                           </p>
-                          <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                          <h3 className="text-xl font-bold text-gray-300 dark:text-white">
                             {item.title}
                           </h3>
                           <p className="text-portfolio-purple dark:text-portfolio-accent font-medium">
                             {item.company}
                           </p>
-                          <p className="text-gray-600 dark:text-gray-400 text-sm">
+                          <p className="text-gray-400 dark:text-gray-400 text-sm">
                             {item.description}
                           </p>
                           <div className="flex flex-wrap gap-2 pt-2">
@@ -210,13 +159,13 @@ export default function Experience() {
                     <p className="text-sm font-semibold text-portfolio-purple dark:text-portfolio-accent mb-2">
                       {item.period}
                     </p>
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">
+                    <h3 className="text-lg font-bold text-gray-300 dark:text-white mb-1">
                       {item.title}
                     </h3>
                     <p className="text-portfolio-purple dark:text-portfolio-accent font-medium mb-3">
                       {item.company}
                     </p>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">
+                    <p className="text-gray-400 dark:text-gray-400 text-sm mb-3">
                       {item.description}
                     </p>
                     <div className="flex flex-wrap gap-2">

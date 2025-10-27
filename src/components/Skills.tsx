@@ -1,3 +1,4 @@
+import { skillsData, skillsHeader } from "@/Constant";
 import { easeOut, motion } from "framer-motion";
 
 export default function Skills() {
@@ -35,56 +36,10 @@ export default function Skills() {
     },
   };
 
-  const skillsData = [
-    {
-      icon: "⚛️",
-      title: "React.js",
-      description: "Building dynamic, component-based user interfaces",
-      proficiency: 95,
-    },
-    {
-      icon: "📘",
-      title: "TypeScript",
-      description: "Type-safe JavaScript for scalable applications",
-      proficiency: 90,
-    },
-    {
-      icon: "🎨",
-      title: "Tailwind CSS",
-      description: "Utility-first CSS for rapid UI development",
-      proficiency: 95,
-    },
-    {
-      icon: "🎯",
-      title: "Zustand",
-      description: "Lightweight state management solution",
-      proficiency: 85,
-    },
-    {
-      icon: "🧩",
-      title: "ShadCN/UI",
-      description: "Beautiful, accessible UI components",
-      proficiency: 90,
-    },
-    {
-      icon: "✨",
-      title: "Framer Motion",
-      description: "Smooth animations and transitions",
-      proficiency: 88,
-    },
-    {
-      icon: "🔧",
-      title: "Node.js",
-      description: "Backend development with JavaScript",
-      proficiency: 80,
-    },
-    {
-      icon: "📦",
-      title: "Vite",
-      description: "Next-generation frontend tooling",
-      proficiency: 88,
-    },
-  ];
+
+
+
+
 
   return (
     <section id="skills" className="min-h-screen flex items-center py-20 px-4 sm:px-6 lg:px-8">
@@ -102,14 +57,14 @@ export default function Skills() {
             className="text-4xl lg:text-5xl font-bold mb-4"
           >
             <span className="bg-gradient-to-r from-portfolio-purple to-portfolio-blue bg-clip-text text-transparent">
-              My Skills
+              {skillsHeader?.title}
             </span>
           </motion.h2>
           <motion.p
             variants={itemVariants}
             className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto"
           >
-            Expertise in modern web technologies and frameworks
+            {skillsHeader?.description}
           </motion.p>
           <motion.div
             variants={itemVariants}
@@ -125,12 +80,12 @@ export default function Skills() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          {skillsData.map((skill, index) => (
+          {skillsData?.map((skill, index) => (
             <motion.div
               key={index}
               variants={cardVariants}
               whileHover="hover"
-              className="group p-6 bg-white dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-slate-800 cursor-pointer"
+              className="z-10 group p-6 bg-portfolio-light/65 dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-slate-800 cursor-pointer"
             >
               {/* Icon */}
               <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">

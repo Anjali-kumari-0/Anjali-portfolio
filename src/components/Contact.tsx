@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { easeOut, motion } from "framer-motion";
 import { Mail, MessageSquare, User, Send } from "lucide-react";
+import { footerData } from "@/Constant";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -91,62 +92,44 @@ export default function Contact() {
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
               Let's connect
             </h3>
-
-            {[
-              {
-                icon: Mail,
-                title: "Email",
-                content: "anjali@example.com",
-                link: "mailto:anjali@example.com",
-              },
-              {
-                icon: User,
-                title: "LinkedIn",
-                content: "linkedin.com/in/anjali",
-                link: "#",
-              },
-              {
-                icon: MessageSquare,
-                title: "GitHub",
-                content: "github.com/anjali",
-                link: "#",
-              },
-            ].map((item, idx) => {
-              const Icon = item.icon;
-              return (
-                <a
-                  key={idx}
-                  href={item.link}
-                  className="flex items-start gap-4 p-4 bg-portfolio-light/50 dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-slate-800 hover:border-portfolio-purple dark:hover:border-portfolio-accent transition-all duration-300 group"
-                >
-                  <div className="w-12 h-12 bg-gradient-portfolio rounded-lg flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform">
-                    <Icon className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-1">
-                      {item.title}
-                    </h4>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm">
-                      {item.content}
-                    </p>
-                  </div>
-                </a>
-              );
-            })}
+            {/* <div className="z-10 gap-20 grid grid-cols-1 sm:grid-cols-2"> */}
+              {footerData?.contactSocial?.map((item, idx) => {
+                const Icon = item.icon;
+                return (
+                  <a
+                    key={idx}
+                    href={item.href}
+                    className="flex items-start gap-4 p-4 bg-portfolio-light/50 dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-slate-800 hover:border-portfolio-purple dark:hover:border-portfolio-accent transition-all duration-300 group"
+                  >
+                    <div className="w-12 h-12 bg-gradient-portfolio rounded-lg flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform">
+                      <Icon className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-500 dark:text-white mb-1">
+                        {item.label}
+                      </h4>
+                      <p className="text-gray-600 dark:text-gray-400 text-sm">
+                        {item.content}
+                      </p>
+                    </div>
+                  </a>
+                );
+              })}
+            {/* </div> */}
 
             {/* Social Links */}
             <div className="pt-8">
-              <h4 className="font-semibold text-gray-900 dark:text-white mb-4">
+              <h4 className="font-semibold text-gray-500 dark:text-white mb-4">
                 Follow me
               </h4>
               <div className="flex gap-4">
-                {["LinkedIn", "GitHub", "Twitter"].map((social) => (
+                {footerData?.contactSocial?.map((social) => (
                   <a
-                    key={social}
-                    href="#"
+                    key={social.label}
+                    href={social.href}
                     className="w-12 h-12 rounded-full border-2 border-gray-300 dark:border-slate-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:border-portfolio-purple dark:hover:border-portfolio-accent hover:text-portfolio-purple dark:hover:text-portfolio-accent transition-all duration-300 hover:scale-110 font-medium text-sm"
                   >
-                    {social[0]}
+                    {social?.label[0]}
                   </a>
                 ))}
               </div>
@@ -207,11 +190,10 @@ export default function Contact() {
               {/* Submit Button */}
               <motion.button
                 type="submit"
-                className={`w-full py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 ${
-                  isSubmitted
+                className={`w-full py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 ${isSubmitted
                     ? "bg-green-500 text-white"
                     : "bg-gradient-portfolio text-white hover:shadow-lg hover:shadow-portfolio-purple/50"
-                }`}
+                  }`}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >

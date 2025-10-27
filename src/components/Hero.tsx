@@ -1,3 +1,4 @@
+import { footerData } from "@/Constant";
 import { easeInOut, easeOut, motion } from "framer-motion";
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 
@@ -48,9 +49,9 @@ export default function Hero() {
       >
         {/* Greeting */}
         <motion.div variants={itemVariants} className="mb-6">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-portfolio-light/50 dark:bg-slate-900 rounded-full border border-portfolio-purple/20 dark:border-portfolio-accent/30">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-transparent shadow-md shadow-amber-50 dark:bg-slate-900 rounded-full border border-portfolio-purple/20 dark:border-portfolio-accent/30">
             <span className="text-2xl">👋</span>
-            <span className="text-sm font-medium text-portfolio-purple dark:text-portfolio-accent">Welcome to my portfolio</span>
+            <span className="text-sm font-medium text-portfolio-light dark:text-portfolio-accent">Welcome to my portfolio</span>
           </div>
         </motion.div>
 
@@ -63,7 +64,7 @@ export default function Hero() {
             Hi, I'm Anjali 👋
           </span>
           <br />
-          <span className="text-gray-900 dark:text-white">
+          <span className="text-gray-400 dark:text-white">
             Crafting Seamless Web
             <br />
             Experiences with React
@@ -73,7 +74,7 @@ export default function Hero() {
         {/* Tagline */}
         <motion.p
           variants={itemVariants}
-          className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed"
+          className="text-xl text-gray-500 dark:text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed"
         >
           A passionate Frontend Developer & UI Engineer specializing in React, TypeScript, and modern UI design. I build beautiful, performant, and accessible web applications that users love.
         </motion.p>
@@ -87,9 +88,14 @@ export default function Hero() {
             View My Work
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
-          <button className="px-8 py-4 border-2 border-portfolio-purple dark:border-portfolio-accent text-portfolio-purple dark:text-portfolio-accent rounded-lg font-semibold hover:bg-portfolio-purple/10 dark:hover:bg-portfolio-accent/10 transition-all duration-300">
+          <a
+            href="/resume.pdf"
+            download
+            className="px-8 py-4 border-2 border-portfolio-purple dark:border-portfolio-accent text-portfolio-purple dark:text-portfolio-accent rounded-lg font-semibold hover:bg-portfolio-purple/10 dark:hover:bg-portfolio-accent/10 transition-all duration-300"
+          >
             Download Resume
-          </button>
+          </a>
+
         </motion.div>
 
         {/* Social Links */}
@@ -97,11 +103,7 @@ export default function Hero() {
           variants={itemVariants}
           className="flex justify-center gap-6 mb-12"
         >
-          {[
-            { icon: Github, href: "#", label: "GitHub" },
-            { icon: Linkedin, href: "#", label: "LinkedIn" },
-            { icon: Mail, href: "mailto:", label: "Email" },
-          ].map((social) => {
+          {footerData?.contactSocial?.map((social) => {
             const Icon = social.icon;
             return (
               <a

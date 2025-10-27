@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, easeOut } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
+import { projectCategories, projectsData } from "@/Constant";
 
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -40,87 +41,7 @@ export default function Projects() {
     },
   };
 
-  const projectsData = [
-    {
-      id: 1,
-      title: "E-Commerce Platform",
-      description: "A modern e-commerce platform with advanced filtering, real-time inventory management, and seamless checkout experience.",
-      image: "🛍️",
-      category: "react",
-      tags: ["React", "TypeScript", "Tailwind", "Zustand"],
-      links: {
-        github: "#",
-        live: "#",
-      },
-    },
-    {
-      id: 2,
-      title: "Task Management App",
-      description: "Collaborative task management tool with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      image: "✅",
-      category: "react",
-      tags: ["React", "TypeScript", "Framer Motion"],
-      links: {
-        github: "#",
-        live: "#",
-      },
-    },
-    {
-      id: 3,
-      title: "Portfolio Website",
-      description: "Interactive portfolio showcase with smooth animations, dark mode support, and responsive design across all devices.",
-      image: "💼",
-      category: "tailwind",
-      tags: ["React", "Tailwind", "Animations"],
-      links: {
-        github: "#",
-        live: "#",
-      },
-    },
-    {
-      id: 4,
-      title: "Analytics Dashboard",
-      description: "Real-time analytics dashboard with interactive charts, data visualization, and comprehensive reporting capabilities.",
-      image: "📊",
-      category: "react",
-      tags: ["React", "Charts", "Data Viz"],
-      links: {
-        github: "#",
-        live: "#",
-      },
-    },
-    {
-      id: 5,
-      title: "Chat Application",
-      description: "Real-time messaging application with WebSocket integration, user presence indicators, and message history.",
-      image: "💬",
-      category: "node",
-      tags: ["React", "Node.js", "WebSocket"],
-      links: {
-        github: "#",
-        live: "#",
-      },
-    },
-    {
-      id: 6,
-      title: "Design System",
-      description: "Comprehensive design system with reusable components, documentation, and Storybook integration.",
-      image: "🎨",
-      category: "tailwind",
-      tags: ["ShadCN", "Tailwind", "Components"],
-      links: {
-        github: "#",
-        live: "#",
-      },
-    },
-  ];
 
-  const categories = [
-    { id: "all", label: "All Projects" },
-    { id: "react", label: "React" },
-    { id: "tailwind", label: "Tailwind CSS" },
-    { id: "node", label: "Node.js" },
-  ];
 
   const filteredProjects =
     selectedCategory === "all"
@@ -166,15 +87,14 @@ export default function Projects() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          {categories.map((category) => (
+          {projectCategories?.map((category) => (
             <button
               key={category.id}
               onClick={() => setSelectedCategory(category.id)}
-              className={`px-6 py-2 rounded-lg font-medium transition-all duration-300 ${
-                selectedCategory === category.id
-                  ? "bg-gradient-portfolio text-white shadow-lg shadow-portfolio-purple/50"
-                  : "bg-gray-100 dark:bg-slate-900 text-gray-700 dark:text-gray-300 hover:border-portfolio-purple dark:hover:border-portfolio-accent border border-gray-200 dark:border-slate-800"
-              }`}
+              className={`z-10 px-6 py-2 rounded-lg font-medium transition-all duration-300 ${selectedCategory === category.id
+                ? "bg-gradient-portfolio text-white shadow-lg shadow-portfolio-purple/50"
+                : "bg-gray-100 dark:bg-slate-900 text-gray-700 dark:text-gray-300 hover:border-portfolio-purple dark:hover:border-portfolio-accent border border-gray-200 dark:border-slate-800"
+                }`}
             >
               {category.label}
             </button>
@@ -194,7 +114,7 @@ export default function Projects() {
               key={project.id}
               variants={projectCardVariants}
               whileHover="hover"
-              className="group bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-gray-200 dark:border-slate-800"
+              className="z-10 group bg-portfolio-light/65 dark:bg-slate-900 rounded-xl overflow-hidden border border-gray-200 dark:border-slate-800"
             >
               {/* Image Area */}
               <div className="relative h-40 bg-gradient-soft overflow-hidden flex items-center justify-center">
