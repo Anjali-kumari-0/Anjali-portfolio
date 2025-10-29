@@ -45,7 +45,7 @@ export default function Experience() {
           </motion.h2>
           <motion.p
             variants={itemVariants}
-            className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto"
+            className="app-text-description text-lg max-w-2xl mx-auto"
           >
             Career milestones and professional growth
           </motion.p>
@@ -84,23 +84,23 @@ export default function Experience() {
                     <div className={isLeft ? "order-1" : "order-2"}>
                       {isLeft && (
                         <div className="text-right space-y-2">
-                          <p className="text-sm font-semibold text-portfolio-purple dark:text-portfolio-accent">
+                          <p className="text-sm font-semibold app-text-portfolio">
                             {item.period}
                           </p>
-                          <h3 className="text-xl font-bold text-gray-300 dark:text-white">
+                          <h3 className="text-xl font-bold app-text-normal">
                             {item.title}
                           </h3>
-                          <p className="text-portfolio-purple dark:text-portfolio-accent font-medium">
+                          <p className="app-text-portfolio font-medium">
                             {item.company}
                           </p>
-                          <p className="text-gray-400 dark:text-gray-400 text-sm">
+                          <p className="app-text-description text-sm">
                             {item.description}
                           </p>
                           <div className="flex flex-wrap gap-2 justify-end pt-2">
                             {item.skills.map((skill, idx) => (
                               <span
                                 key={idx}
-                                className="text-xs px-3 py-1 bg-portfolio-light/50 dark:bg-slate-900 text-gray-700 dark:text-gray-300 rounded-full border border-portfolio-purple/20 dark:border-portfolio-accent/30"
+                                className="text-xs px-3 py-1 normal-bg app-text-primary rounded-full border border-portfolio-purple/20 dark:border-portfolio-accent/30"
                               >
                                 {skill}
                               </span>
@@ -115,8 +115,8 @@ export default function Experience() {
                       <div className="flex justify-center">
                         <div className="relative w-14 h-14">
                           <div className="absolute inset-0 bg-gradient-portfolio rounded-full opacity-20" />
-                          <div className="absolute inset-1 bg-white dark:bg-slate-950 rounded-full border-4 border-white dark:border-slate-950 flex items-center justify-center">
-                            <Icon className="w-6 h-6 text-portfolio-purple dark:text-portfolio-accent" />
+                          <div className="absolute inset-1 global-bg rounded-full border-4 border-white dark:border-slate-950 flex items-center justify-center">
+                            <Icon className="w-6 h-6 app-text-portfolio" />
                           </div>
                         </div>
                       </div>
@@ -126,23 +126,23 @@ export default function Experience() {
                     <div className={!isLeft ? "order-1" : "order-2"}>
                       {!isLeft && (
                         <div className="space-y-2">
-                          <p className="text-sm font-semibold text-portfolio-purple dark:text-portfolio-accent">
+                          <p className="text-sm font-semibold app-text-portfolio">
                             {item.period}
                           </p>
-                          <h3 className="text-xl font-bold text-gray-300 dark:text-white">
+                          <h3 className="text-xl font-bold app-text-normal">
                             {item.title}
                           </h3>
-                          <p className="text-portfolio-purple dark:text-portfolio-accent font-medium">
+                          <p className="app-text-portfolio font-medium">
                             {item.company}
                           </p>
-                          <p className="text-gray-400 dark:text-gray-400 text-sm">
+                          <p className="app-text-description text-sm">
                             {item.description}
                           </p>
                           <div className="flex flex-wrap gap-2 pt-2">
                             {item.skills.map((skill, idx) => (
                               <span
                                 key={idx}
-                                className="text-xs px-3 py-1 bg-portfolio-light/50 dark:bg-slate-900 text-gray-700 dark:text-gray-300 rounded-full border border-portfolio-purple/20 dark:border-portfolio-accent/30"
+                                className="text-xs px-3 py-1 normal-bg app-text-primary rounded-full border border-portfolio-purple/20 dark:border-portfolio-accent/30"
                               >
                                 {skill}
                               </span>
@@ -154,25 +154,25 @@ export default function Experience() {
                   </div>
 
                   {/* Mobile Layout */}
-                  <div className="md:hidden bg-white dark:bg-slate-900 rounded-xl p-6 border border-gray-200 dark:border-slate-800 ml-8 relative">
+                  <div className="md:hidden normal-bg rounded-xl p-6 border nav-border ml-8 relative">
                     <div className="absolute -left-8 top-6 w-6 h-6 bg-gradient-portfolio rounded-full border-4 border-white dark:border-slate-900" />
-                    <p className="text-sm font-semibold text-portfolio-purple dark:text-portfolio-accent mb-2">
+                    <p className="text-sm font-semibold app-text-portfolio mb-2">
                       {item.period}
                     </p>
-                    <h3 className="text-lg font-bold text-gray-300 dark:text-white mb-1">
+                    <h3 className="text-lg font-bold app-text-normal mb-1">
                       {item.title}
                     </h3>
-                    <p className="text-portfolio-purple dark:text-portfolio-accent font-medium mb-3">
+                    <p className="app-text-portfolio font-medium mb-3">
                       {item.company}
                     </p>
-                    <p className="text-gray-400 dark:text-gray-400 text-sm mb-3">
+                    <p className="app-text-description text-sm mb-3">
                       {item.description}
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {item.skills.map((skill, idx) => (
                         <span
                           key={idx}
-                          className="text-xs px-3 py-1 bg-portfolio-light/50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 rounded-full border border-portfolio-purple/20 dark:border-portfolio-accent/30"
+                          className="text-xs px-3 py-1 normal-bg-two app-text-primary rounded-full border border-portfolio-purple/20 dark:border-portfolio-accent/30"
                         >
                           {skill}
                         </span>

@@ -94,7 +94,7 @@ export default function Contact() {
           </motion.h2>
           <motion.p
             variants={itemVariants}
-            className="text-gray-500 dark:text-gray-400 text-lg max-w-2xl mx-auto"
+            className="app-text-description text-lg max-w-2xl mx-auto"
           >
             Have a project in mind? Let's collaborate and create something amazing together.
           </motion.p>
@@ -114,7 +114,7 @@ export default function Contact() {
         >
           {/* Contact Methods */}
           <motion.div variants={itemVariants} className="space-y-6">
-            <h3 className="text-2xl font-bold text-gray-500 dark:text-white mb-8">
+            <h3 className="text-2xl font-bold app-text-normal mb-8">
               Let's connect
             </h3>
             {footerData?.contactSocial?.map((item, idx) => {
@@ -123,16 +123,16 @@ export default function Contact() {
                 <a
                   key={idx}
                   href={item.href}
-                  className="z-10 flex items-start gap-4 p-4 bg-portfolio-light/50 dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-slate-800 hover:border-portfolio-purple dark:hover:border-portfolio-accent transition-all duration-300 group"
+                  className="z-10 flex items-start gap-4 p-4 normal-bg rounded-xl border nav-border app-border-hover-primary transition-all duration-300 group"
                 >
                   <div className="z-10 w-12 h-12 bg-gradient-portfolio rounded-lg flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform">
                     <Icon className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="z-10 font-semibold text-gray-9 00 dark:text-white mb-1">
+                    <h4 className="z-10 font-semibold app-text-normal mb-1">
                       {item.label}
                     </h4>
-                    <p className="text-gray-800 dark:text-gray-400 text-sm">
+                    <p className="app-text-description text-sm">
                       {item.content}
                     </p>
                   </div>
@@ -145,7 +145,7 @@ export default function Contact() {
           <motion.div variants={itemVariants}>
             <form ref={form} onSubmit={handleSubmit} className=" space-y-6">
               <div className="z-10 relative">
-                <label className="block text-sm font-medium text-gray-500 dark:text-gray-300 mb-2">
+                <label className="block text-sm font-medium app-text-primary mb-2">
                   Your Name
                 </label>
                 <input
@@ -155,12 +155,12 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   placeholder="Anjali Kumari"
-                  className="z-10 w-full px-4 py-3 bg-white dark:bg-slate-900 border border-gray-300 dark:border-slate-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-portfolio-purple dark:focus:border-portfolio-accent transition-colors"
+                  className="z-10 w-full px-4 py-3 normal-bg border normal-border rounded-lg app-text-normal placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-portfolio-purple dark:focus:border-portfolio-accent transition-colors"
                 />
               </div>
 
               <div className="z-10 relative">
-                <label className="block text-sm font-medium text-gray-500 dark:text-gray-300 mb-2">
+                <label className="block text-sm font-medium app-text-primary mb-2">
                   Email Address
                 </label>
                 <input
@@ -170,12 +170,12 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   placeholder="your@email.com"
-                  className=" w-full px-4 py-3 bg-white dark:bg-slate-900 border border-gray-300 dark:border-slate-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-portfolio-purple dark:focus:border-portfolio-accent transition-colors"
+                  className=" w-full px-4 py-3 normal-bg border normal-border rounded-lg app-text-normal placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-portfolio-purple dark:focus:border-portfolio-accent transition-colors"
                 />
               </div>
 
               <div className="z-10 relative">
-                <label className="block text-sm font-medium text-gray-500 dark:text-gray-300 mb-2">
+                <label className="block text-sm font-medium app-text-primary mb-2">
                   Message
                 </label>
                 <textarea
@@ -185,7 +185,7 @@ export default function Contact() {
                   required
                   placeholder="Tell me about your project or how I can help..."
                   rows={5}
-                  className="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-gray-300 dark:border-slate-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-portfolio-purple dark:focus:border-portfolio-accent transition-colors resize-none"
+                  className="w-full px-4 py-3 normal-bg border normal-border rounded-lg app-text-normal placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-portfolio-purple dark:focus:border-portfolio-accent transition-colors resize-none"
                 />
               </div>
               <div className="z-10">
@@ -210,7 +210,7 @@ export default function Contact() {
                 </motion.button>
               </div>
               {/* ✅ Status text */}
-              <p className="text-sm text-center text-gray-500 dark:text-gray-400">{status}</p>
+              <p className="text-sm text-center app-text-description">{status}</p>
             </form>
           </motion.div>
         </motion.div>

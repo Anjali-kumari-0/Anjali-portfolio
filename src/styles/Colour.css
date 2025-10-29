@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@layer utilities {
+  /* background  */
+  .global-bg {
+    @apply bg-slate-950 dark:bg-slate-950;
+  }
+  .nav-bg {
+    @apply bg-slate-950/80 dark:bg-slate-950/80;
+  }
+  .normal-bg {
+    @apply bg-slate-900 dark:bg-slate-900;
+  }
+  .normal-bg-two {
+    @apply bg-slate-800 dark:bg-slate-800;
+  }
+  .from-to-bg {
+    @apply from-portfolio-purple/20 to-portfolio-blue/20 dark:from-portfolio-purple/10 dark:to-portfolio-blue/10;
+  }
+
+  /* 🧭 Text Styles */
+  .app-text-primary {
+    @apply text-gray-300 dark:text-gray-300;
+  }
+  .app-text-primary-light {
+    @apply text-gray-200 dark:text-gray-200;
+  }
+  .app-text-hover-primary {
+    @apply hover:text-portfolio-accent dark:hover:text-portfolio-accent;
+  }
+  .app-text-description {
+    @apply text-gray-400 dark:text-gray-400;
+  }
+  .app-text-normal {
+    @apply text-white dark:text-white;
+  }
+  .app-text-portfolio {
+    @apply text-portfolio-purple dark:text-portfolio-accent;
+  }
+
+  /* 🛡️Border */
+  .nav-border {
+    @apply border-slate-800 dark:border-slate-800;
+  }
+  .normal-border {
+    @apply border-slate-700 dark:border-slate-700;
+  }
+  .group-hover-border {
+    @apply group-hover:border-portfolio-accent dark:group-hover:border-portfolio-accent;
+  }
+  .app-border-hover-primary {
+    @apply hover:border-portfolio-accent dark:hover:border-portfolio-accent;
+  }
+  .app-border-portfolio-p {
+    @apply border-portfolio-purple/20 dark:border-portfolio-accent/30;
+  }
+}

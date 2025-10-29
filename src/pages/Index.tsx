@@ -8,7 +8,7 @@ import Footer from "../components/Footer";
 
 export default function Index() {
   return (
-    <div className="relative w-full min-h-screen bg-black dark:bg-slate-950">
+    <div className="relative w-full min-h-screen global-bg">
       <Hero />
       <About />
       <Skills />

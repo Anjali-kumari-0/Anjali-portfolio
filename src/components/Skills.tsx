@@ -62,7 +62,7 @@ export default function Skills() {
           </motion.h2>
           <motion.p
             variants={itemVariants}
-            className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto"
+            className="app-text-description text-lg max-w-2xl mx-auto"
           >
             {skillsHeader?.description}
           </motion.p>
@@ -85,7 +85,7 @@ export default function Skills() {
               key={index}
               variants={cardVariants}
               whileHover="hover"
-              className="z-10 group p-6 bg-portfolio-light/65 dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-slate-800 cursor-pointer"
+              className="z-10 group p-6 normal-bg rounded-xl border nav-border cursor-pointer"
             >
               {/* Icon */}
               <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -93,26 +93,26 @@ export default function Skills() {
               </div>
 
               {/* Title */}
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+              <h3 className="text-lg font-semibold app-text-normal mb-2">
                 {skill.title}
               </h3>
 
               {/* Description */}
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+              <p className="text-sm app-text-description mb-4">
                 {skill.description}
               </p>
 
               {/* Proficiency Bar */}
               <div className="space-y-2">
                 <div className="flex justify-between items-center">
-                  <span className="text-xs font-medium text-gray-600 dark:text-gray-400">
+                  <span className="text-xs font-medium app-text-description">
                     Proficiency
                   </span>
-                  <span className="text-xs font-bold text-portfolio-purple dark:text-portfolio-accent">
+                  <span className="text-xs font-bold app-text-portfolio">
                     {skill.proficiency}%
                   </span>
                 </div>
-                <div className="w-full h-2 bg-gray-200 dark:bg-slate-800 rounded-full overflow-hidden">
+                <div className="w-full h-2 normal-bg-two rounded-full overflow-hidden">
                   <motion.div
                     className="h-full bg-gradient-portfolio rounded-full"
                     initial={{ width: 0 }}
@@ -124,7 +124,7 @@ export default function Skills() {
               </div>
 
               {/* Hover Border */}
-              <div className="absolute inset-0 rounded-xl border border-portfolio-purple/0 group-hover:border-portfolio-purple dark:group-hover:border-portfolio-accent transition-colors duration-300 pointer-events-none" />
+              <div className="absolute inset-0 rounded-xl border border-portfolio-purple/0 group-hover-border transition-colors duration-300 pointer-events-none" />
             </motion.div>
           ))}
         </motion.div>

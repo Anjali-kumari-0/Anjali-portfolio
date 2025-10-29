@@ -69,7 +69,7 @@ export default function Projects() {
           </motion.h2>
           <motion.p
             variants={itemVariants}
-            className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto"
+            className="app-text-description text-lg max-w-2xl mx-auto"
           >
             Showcasing my best work across different technologies
           </motion.p>
@@ -93,7 +93,7 @@ export default function Projects() {
               onClick={() => setSelectedCategory(category.id)}
               className={`z-10 px-6 py-2 rounded-lg font-medium transition-all duration-300 ${selectedCategory === category.id
                 ? "bg-gradient-portfolio text-white shadow-lg shadow-portfolio-purple/50"
-                : "bg-gray-100 dark:bg-slate-900 text-gray-700 dark:text-gray-300 hover:border-portfolio-purple dark:hover:border-portfolio-accent border border-gray-200 dark:border-slate-800"
+                : "normal-bg app-text-primary app-border-hover-primary border nav-border"
                 }`}
             >
               {category.label}
@@ -114,7 +114,7 @@ export default function Projects() {
               key={project.id}
               variants={projectCardVariants}
               whileHover="hover"
-              className="z-10 group bg-portfolio-light/65 dark:bg-slate-900 rounded-xl overflow-hidden border border-gray-200 dark:border-slate-800"
+              className="z-10 group normal-bg rounded-xl overflow-hidden border normal-bg-two"
             >
               {/* Image Area */}
               <div className="relative h-40 bg-gradient-soft overflow-hidden flex items-center justify-center">
@@ -125,12 +125,12 @@ export default function Projects() {
               {/* Content */}
               <div className="p-6 space-y-4">
                 {/* Title */}
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                <h3 className="text-xl font-bold app-text-normal">
                   {project.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-3">
+                <p className="text-sm app-text-description line-clamp-3">
                   {project.description}
                 </p>
 
@@ -139,7 +139,7 @@ export default function Projects() {
                   {project.tags.map((tag, idx) => (
                     <span
                       key={idx}
-                      className="text-xs px-3 py-1 bg-portfolio-light/50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 rounded-full border border-portfolio-purple/20 dark:border-portfolio-accent/30"
+                      className="text-xs px-3 py-1 normal-bg-two app-text-primary rounded-full border border-portfolio-accent/30 dark:border-portfolio-accent/30"
                     >
                       {tag}
                     </span>
@@ -147,10 +147,10 @@ export default function Projects() {
                 </div>
 
                 {/* Links */}
-                <div className="flex gap-3 pt-4 border-t border-gray-200 dark:border-slate-800">
+                <div className="flex gap-3 pt-4 border-t nav-border">
                   <a
                     href={project.links.github}
-                    className="flex items-center gap-2 flex-1 px-4 py-2 bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-portfolio-purple/10 dark:hover:bg-portfolio-accent/10 transition-colors justify-center"
+                    className="flex items-center gap-2 flex-1 px-4 py-2 normal-bg-two app-text-primary rounded-lg hover:bg-portfolio-accent/10 dark:hover:bg-portfolio-accent/10 transition-colors justify-center"
                   >
                     <Github className="w-4 h-4" />
                     <span className="text-sm font-medium">Code</span>

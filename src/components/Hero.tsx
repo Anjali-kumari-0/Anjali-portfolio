@@ -38,7 +38,7 @@ export default function Hero() {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 px-4 sm:px-6 lg:px-8">
       {/* Animated Background Elements */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-portfolio-purple/20 rounded-full blur-3xl opacity-50 dark:opacity-30 animate-pulse-slow" />
+      <div className="absolute top-20 left-10 w-72 h-72 bg-portfolio-accent/20 rounded-full blur-3xl opacity-50 dark:opacity-30 animate-pulse-slow" />
       <div className="absolute bottom-20 right-10 w-72 h-72 bg-portfolio-blue/20 rounded-full blur-3xl opacity-50 dark:opacity-30 animate-pulse-slow" style={{ animationDelay: "1s" }} />
 
       <motion.div
@@ -49,9 +49,9 @@ export default function Hero() {
       >
         {/* Greeting */}
         <motion.div variants={itemVariants} className="mb-6">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-transparent shadow-md shadow-amber-50 dark:bg-slate-900 rounded-full border border-portfolio-purple/20 dark:border-portfolio-accent/30">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-transparent shadow-md shadow-amber-50  normal-bg rounded-full border border-portfolio-accent/30 dark:border-portfolio-accent/30">
             <span className="text-2xl">👋</span>
-            <span className="text-sm font-medium text-portfolio-light dark:text-portfolio-accent">Welcome to my portfolio</span>
+            <span className="text-sm font-medium app-text-portfolio">Welcome to my portfolio</span>
           </div>
         </motion.div>
 
@@ -60,11 +60,11 @@ export default function Hero() {
           variants={itemVariants}
           className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
         >
-          <span className="bg-gradient-to-r from-portfolio-purple via-portfolio-blue to-portfolio-accent bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-portfolio-accent via-portfolio-blue to-portfolio-accent bg-clip-text text-transparent">
             Hi, I'm Anjali 👋
           </span>
           <br />
-          <span className="text-gray-400 dark:text-white">
+          <span className="app-text-normal">
             Crafting Seamless Web
             <br />
             Experiences with React
@@ -74,7 +74,7 @@ export default function Hero() {
         {/* Tagline */}
         <motion.p
           variants={itemVariants}
-          className="text-xl text-gray-500 dark:text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed"
+          className="text-xl app-text-primary mb-8 max-w-2xl mx-auto leading-relaxed"
         >
           A passionate Frontend Developer & UI Engineer specializing in React, TypeScript, and modern UI design. I build beautiful, performant, and accessible web applications that users love.
         </motion.p>
@@ -84,14 +84,14 @@ export default function Hero() {
           variants={itemVariants}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
         >
-          <button className="px-8 py-4 bg-gradient-portfolio text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-portfolio-purple/50 transition-all duration-300 flex items-center gap-2 group">
+          <button className="px-8 py-4 bg-gradient-portfolio text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-portfolio-accent/50 transition-all duration-300 flex items-center gap-2 group">
             View My Work
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
           <a
             href="/resume.pdf"
             download
-            className="px-8 py-4 border-2 border-portfolio-purple dark:border-portfolio-accent text-portfolio-purple dark:text-portfolio-accent rounded-lg font-semibold hover:bg-portfolio-purple/10 dark:hover:bg-portfolio-accent/10 transition-all duration-300"
+            className="px-8 py-4 border-2 border-portfolio-accent dark:border-portfolio-accent app-text-portfolio rounded-lg font-semibold hover:bg-portfolio-accent/10 dark:hover:bg-portfolio-accent/10 transition-all duration-300"
           >
             Download Resume
           </a>
@@ -110,7 +110,7 @@ export default function Hero() {
                 key={social.label}
                 href={social.href}
                 aria-label={social.label}
-                className="w-12 h-12 rounded-full border-2 border-gray-300 dark:border-slate-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:border-portfolio-purple dark:hover:border-portfolio-accent hover:text-portfolio-purple dark:hover:text-portfolio-accent transition-all duration-300 hover:scale-110"
+                className="w-12 h-12 rounded-full border-2 normal-border flex items-center justify-center app-text-primary app-border-hover-primary app-text-hover-primary transition-all duration-300 hover:scale-110"
               >
                 <Icon className="w-5 h-5" />
               </a>
@@ -125,10 +125,10 @@ export default function Hero() {
           animate="animate"
           className="relative h-80 mt-20"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-portfolio-purple/10 to-portfolio-blue/10 dark:from-portfolio-purple/5 dark:to-portfolio-blue/5 rounded-2xl border border-portfolio-purple/20 dark:border-portfolio-accent/20 overflow-hidden flex items-center justify-center">
+          <div className="absolute inset-0 bg-gradient-to-br from-portfolio-accent/10 to-portfolio-blue/10 dark:from-portfolio-accent/5 dark:to-portfolio-blue/5 rounded-2xl border border-portfolio-accent/20 dark:border-portfolio-accent/20 overflow-hidden flex items-center justify-center">
             <div className="text-center">
               <div className="text-6xl mb-4">💻</div>
-              <p className="text-gray-600 dark:text-gray-400 font-medium">Building the future of web</p>
+              <p className="app-text-description font-medium">Building the future of web</p>
             </div>
           </div>
         </motion.div>
@@ -141,7 +141,7 @@ export default function Hero() {
         transition={{ duration: 2, repeat: Infinity }}
       >
         <div className="flex flex-col items-center gap-2">
-          <span className="text-sm text-gray-500 dark:text-gray-400">Scroll to explore</span>
+          <span className="text-sm app-text-description">Scroll to explore</span>
           <div className="w-6 h-10 border-2 border-gray-400 dark:border-gray-600 rounded-full flex justify-center">
             <div className="w-1 h-2 bg-gray-400 dark:bg-gray-600 rounded-full mt-2 animate-pulse" />
           </div>

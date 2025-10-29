@@ -4,6 +4,7 @@ import { Moon, Sun, Menu, X } from "lucide-react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Galaxy from "./components/animation/galaxy/Galaxy";
+// import "./styles/Colour.css";
 // import { cn } from "./lib/utils";
 
 export default function App() {
@@ -41,11 +42,11 @@ export default function App() {
   return (
     <BrowserRouter>
       {/* <div className="bg-black w-full h-full"> */}
-        <div className="relative w-full min-h-screen bg-black dark:bg-slate-950" >
+        <div className="relative w-full min-h-screen global-bg" >
 
           {/* <div className=" absolute inset-0  flex flex-col items-center"> */}
             {/* Navigation */}
-            <nav className="fixed top-0 w-full z-50 bg-transparent dark:bg-slate-950/80 backdrop-blur-md border-b  dark:border-slate-800">
+            <nav className="fixed top-0 w-full z-50 nav-bg backdrop-blur-md border-b nav-border">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
                 {/* Logo */}
                 <a href="#" className="flex items-center gap-2 group">
@@ -63,7 +64,7 @@ export default function App() {
                     <a
                       key={link.label}
                       href={link.href}
-                      className="text-sm font-medium text-gray-400 dark:text-gray-300 hover:text-portfolio-purple dark:hover:text-portfolio-accent transition-colors"
+                      className="text-sm font-medium app-text-primary app-text-hover-primary transition-colors"
                     >
                       {link.label}
                     </a>
@@ -101,13 +102,13 @@ export default function App() {
 
               {/* Mobile Navigation */}
               {isMenuOpen && (
-                <div className="md:hidden bg-white dark:bg-slate-900 border-t border-gray-200 dark:border-slate-800">
+                <div className="md:hidden normal-bg border-t narmal-border">
                   <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-4">
                     {navLinks.map((link) => (
                       <a
                         key={link.label}
                         href={link.href}
-                        className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-portfolio-purple dark:hover:text-portfolio-accent transition-colors py-2"
+                        className="text-sm font-medium app-text-primary app-text-hover-primary transition-colors py-2"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         {link.label}
