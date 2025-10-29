@@ -1,24 +1,36 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { easeOut, motion } from "framer-motion";
-import { Mail, MessageSquare, User, Send } from "lucide-react";
+import { Send } from "lucide-react";
 import { footerData } from "@/Constant";
+import emailjs from "@emailjs/browser";
+
+// Vite provides types for import.meta.env automatically, so no need to redeclare them.
 
 export default function Contact() {
+  // ✅ Add form ref for emailjs
+  const form = useRef<HTMLFormElement>(null);
+
+  // ✅ State for form and status message
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [status, setStatus] = useState("");
 
+  // ✅ Vite environment variables
+  const env = import.meta.env;
+  const SERVICE_ID = env.VITE_MAIL_SERVICE_ID;
+  const TEMPLATE_ID = env.VITE_MAIL_TEMPLATE_ID;
+  const PUBLIC_KEY = env.VITE_MAIL_PUBLIC_KEY;
+
+  // Motion variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.2,
-      },
+      transition: { staggerChildren: 0.2, delayChildren: 0.2 },
     },
   };
 
@@ -31,21 +43,34 @@ export default function Contact() {
     },
   };
 
+  // Input handlers
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  // Submit handler
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitted(true);
-    setTimeout(() => {
-      setFormData({ name: "", email: "", message: "" });
-      setIsSubmitted(false);
-    }, 2000);
+    setStatus("Sending...");
+    if (!form.current) return;
+
+    emailjs
+      .sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+      .then(
+        () => {
+          setStatus("✅ Message sent successfully!");
+          setIsSubmitted(true);
+          setFormData({ name: "", email: "", message: "" });
+          form.current?.reset();
+        },
+        (error) => {
+          setStatus("❌ Failed to send message. Try again later.");
+          console.error(error.text);
+          setIsSubmitted(false);
+        }
+      );
   };
 
   return (
@@ -92,55 +117,34 @@ export default function Contact() {
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
               Let's connect
             </h3>
-            {/* <div className="z-10 gap-20 grid grid-cols-1 sm:grid-cols-2"> */}
-              {footerData?.contactSocial?.map((item, idx) => {
-                const Icon = item.icon;
-                return (
-                  <a
-                    key={idx}
-                    href={item.href}
-                    className="flex items-start gap-4 p-4 bg-portfolio-light/50 dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-slate-800 hover:border-portfolio-purple dark:hover:border-portfolio-accent transition-all duration-300 group"
-                  >
-                    <div className="w-12 h-12 bg-gradient-portfolio rounded-lg flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform">
-                      <Icon className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-500 dark:text-white mb-1">
-                        {item.label}
-                      </h4>
-                      <p className="text-gray-600 dark:text-gray-400 text-sm">
-                        {item.content}
-                      </p>
-                    </div>
-                  </a>
-                );
-              })}
-            {/* </div> */}
-
-            {/* Social Links */}
-            <div className="pt-8">
-              <h4 className="font-semibold text-gray-500 dark:text-white mb-4">
-                Follow me
-              </h4>
-              <div className="flex gap-4">
-                {footerData?.contactSocial?.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    className="w-12 h-12 rounded-full border-2 border-gray-300 dark:border-slate-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:border-portfolio-purple dark:hover:border-portfolio-accent hover:text-portfolio-purple dark:hover:text-portfolio-accent transition-all duration-300 hover:scale-110 font-medium text-sm"
-                  >
-                    {social?.label[0]}
-                  </a>
-                ))}
-              </div>
-            </div>
+            {footerData?.contactSocial?.map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <a
+                  key={idx}
+                  href={item.href}
+                  className="z-10 flex items-start gap-4 p-4 bg-portfolio-light/50 dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-slate-800 hover:border-portfolio-purple dark:hover:border-portfolio-accent transition-all duration-300 group"
+                >
+                  <div className="z-10 w-12 h-12 bg-gradient-portfolio rounded-lg flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="z-10 font-semibold text-gray-500 dark:text-white mb-1">
+                      {item.label}
+                    </h4>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm">
+                      {item.content}
+                    </p>
+                  </div>
+                </a>
+              );
+            })}
           </motion.div>
 
           {/* Contact Form */}
           <motion.div variants={itemVariants}>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Name Input */}
-              <div className="relative">
+            <form ref={form} onSubmit={handleSubmit} className=" space-y-6">
+              <div className="z-10 relative">
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Your Name
                 </label>
@@ -151,12 +155,11 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   placeholder="Anjali Kumari"
-                  className="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-gray-300 dark:border-slate-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-portfolio-purple dark:focus:border-portfolio-accent transition-colors"
+                  className="z-10 w-full px-4 py-3 bg-white dark:bg-slate-900 border border-gray-300 dark:border-slate-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-portfolio-purple dark:focus:border-portfolio-accent transition-colors"
                 />
               </div>
 
-              {/* Email Input */}
-              <div className="relative">
+              <div className="z-10 relative">
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Email Address
                 </label>
@@ -167,12 +170,11 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   placeholder="your@email.com"
-                  className="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-gray-300 dark:border-slate-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-portfolio-purple dark:focus:border-portfolio-accent transition-colors"
+                  className=" w-full px-4 py-3 bg-white dark:bg-slate-900 border border-gray-300 dark:border-slate-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-portfolio-purple dark:focus:border-portfolio-accent transition-colors"
                 />
               </div>
 
-              {/* Message Textarea */}
-              <div className="relative">
+              <div className="z-10 relative">
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Message
                 </label>
@@ -186,33 +188,29 @@ export default function Contact() {
                   className="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-gray-300 dark:border-slate-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-portfolio-purple dark:focus:border-portfolio-accent transition-colors resize-none"
                 />
               </div>
-
-              {/* Submit Button */}
-              <motion.button
-                type="submit"
-                className={`w-full py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 ${isSubmitted
+              <div className="z-10">
+                <motion.button
+                  type="submit"
+                  className={`z-10 w-full py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 ${isSubmitted
                     ? "bg-green-500 text-white"
                     : "bg-gradient-portfolio text-white hover:shadow-lg hover:shadow-portfolio-purple/50"
-                  }`}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                {isSubmitted ? (
-                  <>
-                    <span>✓ Message Sent!</span>
-                  </>
-                ) : (
-                  <>
-                    <span>Send Message</span>
-                    <Send className="w-5 h-5" />
-                  </>
-                )}
-              </motion.button>
-
-              {/* Info Text */}
-              <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
-                I'll get back to you within 24 hours. Looking forward to connecting!
-              </p>
+                    }`}
+                // whileHover={{ scale: 1.02 }}
+                // whileTap={{ scale: 0.98 }}
+                ><div className="z-10">
+                    {isSubmitted ? (
+                      <span>✓ Message Sent!</span>
+                    ) : (
+                      <>
+                        <span>Send Message</span>
+                        <Send className="w-5 h-5" />
+                      </>
+                    )}
+                  </div>
+                </motion.button>
+              </div>
+              {/* ✅ Status text */}
+              <p className="text-sm text-center text-gray-500 dark:text-gray-400">{status}</p>
             </form>
           </motion.div>
         </motion.div>
