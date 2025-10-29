@@ -76,14 +76,14 @@ export default function About() {
                   className="flex items-start gap-3 group"
                 >
                   <CheckCircle2 className="w-6 h-6 text-portfolio-purple dark:text-portfolio-accent flex-shrink-0 mt-1 group-hover:scale-110 transition-transform" />
-                  <span className="text-gray-700 dark:text-gray-300 text-base">{achievement}</span>
+                  <span className="text-gray-600 dark:text-gray-300 text-base">{achievement}</span>
                 </div>
               ))}
             </motion.div>
 
             {/* Skills Summary */}
             <motion.div variants={itemVariants} className="pt-6">
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Core Skills</h3>
+              <h3 className="text-xl font-semibold mb-4 text-gray-500 dark:text-white">Core Skills</h3>
               <div className="grid grid-cols-2 gap-3">
                 {keySkills?.map(
                   (skill) => (

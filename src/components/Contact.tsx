@@ -94,7 +94,7 @@ export default function Contact() {
           </motion.h2>
           <motion.p
             variants={itemVariants}
-            className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto"
+            className="text-gray-500 dark:text-gray-400 text-lg max-w-2xl mx-auto"
           >
             Have a project in mind? Let's collaborate and create something amazing together.
           </motion.p>
@@ -114,7 +114,7 @@ export default function Contact() {
         >
           {/* Contact Methods */}
           <motion.div variants={itemVariants} className="space-y-6">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+            <h3 className="text-2xl font-bold text-gray-500 dark:text-white mb-8">
               Let's connect
             </h3>
             {footerData?.contactSocial?.map((item, idx) => {
@@ -129,10 +129,10 @@ export default function Contact() {
                     <Icon className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="z-10 font-semibold text-gray-500 dark:text-white mb-1">
+                    <h4 className="z-10 font-semibold text-gray-9 00 dark:text-white mb-1">
                       {item.label}
                     </h4>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm">
+                    <p className="text-gray-800 dark:text-gray-400 text-sm">
                       {item.content}
                     </p>
                   </div>
@@ -145,7 +145,7 @@ export default function Contact() {
           <motion.div variants={itemVariants}>
             <form ref={form} onSubmit={handleSubmit} className=" space-y-6">
               <div className="z-10 relative">
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <label className="block text-sm font-medium text-gray-500 dark:text-gray-300 mb-2">
                   Your Name
                 </label>
                 <input
@@ -160,7 +160,7 @@ export default function Contact() {
               </div>
 
               <div className="z-10 relative">
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <label className="block text-sm font-medium text-gray-500 dark:text-gray-300 mb-2">
                   Email Address
                 </label>
                 <input
@@ -175,7 +175,7 @@ export default function Contact() {
               </div>
 
               <div className="z-10 relative">
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <label className="block text-sm font-medium text-gray-500 dark:text-gray-300 mb-2">
                   Message
                 </label>
                 <textarea
@@ -201,10 +201,10 @@ export default function Contact() {
                     {isSubmitted ? (
                       <span>✓ Message Sent!</span>
                     ) : (
-                      <>
+                      <div className="flex gap-2 items-center">
                         <span>Send Message</span>
                         <Send className="w-5 h-5" />
-                      </>
+                      </div>
                     )}
                   </div>
                 </motion.button>
