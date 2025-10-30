@@ -139,7 +139,7 @@ export default function Projects() {
                   {project.tags.map((tag, idx) => (
                     <span
                       key={idx}
-                      className="text-xs px-3 py-1 normal-bg-two app-text-primary rounded-full border border-portfolio-accent/30 dark:border-portfolio-accent/30"
+                      className="text-xs px-3 py-1 normal-bg-two app-text-primary rounded-full border  app-border-portfolio-p"
                     >
                       {tag}
                     </span>
@@ -150,7 +150,7 @@ export default function Projects() {
                 <div className="flex gap-3 pt-4 border-t nav-border">
                   <a
                     href={project.links.github}
-                    className="flex items-center gap-2 flex-1 px-4 py-2 normal-bg-two app-text-primary rounded-lg hover:bg-portfolio-accent/10 dark:hover:bg-portfolio-accent/10 transition-colors justify-center"
+                    className="flex items-center gap-2 flex-1 px-4 py-2 normal-bg-two app-text-primary rounded-lg hover-bg-portfolio transition-colors justify-center"
                   >
                     <Github className="w-4 h-4" />
                     <span className="text-sm font-medium">Code</span>

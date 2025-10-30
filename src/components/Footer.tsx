@@ -78,7 +78,7 @@ export default function Footer() {
           {/* Scroll to Top Button */}
           <motion.button
             onClick={scrollToTop}
-            className="z-10 cursor-pointer w-10 h-10 rounded-full border-2 border-portfolio-purple dark:border-portfolio-accent app-text-portfolio flex items-center justify-center hover:bg-portfolio-purple/10 dark:hover:bg-portfolio-accent/10 transition-all duration-300 hover:scale-110"
+            className="z-10 cursor-pointer w-10 h-10 rounded-full border-2 app-border-portfolio-primary app-text-portfolio flex items-center justify-center  hover-bg-portfolio transition-all duration-300 hover:scale-110"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >

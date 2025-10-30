@@ -100,7 +100,7 @@ export default function Experience() {
                             {item.skills.map((skill, idx) => (
                               <span
                                 key={idx}
-                                className="text-xs px-3 py-1 normal-bg app-text-primary rounded-full border border-portfolio-purple/20 dark:border-portfolio-accent/30"
+                                className="text-xs px-3 py-1 normal-bg app-text-primary rounded-full border app-border-portfolio-p"
                               >
                                 {skill}
                               </span>
@@ -115,7 +115,7 @@ export default function Experience() {
                       <div className="flex justify-center">
                         <div className="relative w-14 h-14">
                           <div className="absolute inset-0 bg-gradient-portfolio rounded-full opacity-20" />
-                          <div className="absolute inset-1 global-bg rounded-full border-4 border-white dark:border-slate-950 flex items-center justify-center">
+                          <div className="absolute inset-1 global-bg rounded-full border-4 dark-border flex items-center justify-center">
                             <Icon className="w-6 h-6 app-text-portfolio" />
                           </div>
                         </div>
@@ -142,7 +142,7 @@ export default function Experience() {
                             {item.skills.map((skill, idx) => (
                               <span
                                 key={idx}
-                                className="text-xs px-3 py-1 normal-bg app-text-primary rounded-full border border-portfolio-purple/20 dark:border-portfolio-accent/30"
+                                className="text-xs px-3 py-1 normal-bg app-text-primary rounded-full border app-border-portfolio-p"
                               >
                                 {skill}
                               </span>
@@ -155,7 +155,7 @@ export default function Experience() {
 
                   {/* Mobile Layout */}
                   <div className="md:hidden normal-bg rounded-xl p-6 border nav-border ml-8 relative">
-                    <div className="absolute -left-8 top-6 w-6 h-6 bg-gradient-portfolio rounded-full border-4 border-white dark:border-slate-900" />
+                    <div className="absolute -left-8 top-6 w-6 h-6 bg-gradient-portfolio rounded-full border-4 dark-border2" />
                     <p className="text-sm font-semibold app-text-portfolio mb-2">
                       {item.period}
                     </p>
@@ -172,7 +172,7 @@ export default function Experience() {
                       {item.skills.map((skill, idx) => (
                         <span
                           key={idx}
-                          className="text-xs px-3 py-1 normal-bg-two app-text-primary rounded-full border border-portfolio-purple/20 dark:border-portfolio-accent/30"
+                          className="text-xs px-3 py-1 normal-bg-two app-text-primary rounded-full border app-border-portfolio-p"
                         >
                           {skill}
                         </span>

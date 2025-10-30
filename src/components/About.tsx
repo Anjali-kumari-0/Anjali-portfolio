@@ -38,7 +38,7 @@ export default function About() {
         >
           {/* Left Side - Image/Visual */}
           <motion.div variants={itemVariants} className="relative h-96 lg:h-full min-h-96">
-            <div className="absolute inset-0 bg-gradient-to-br from-to-bg rounded-2xl border border-portfolio-purple/30 dark:border-portfolio-accent/20 overflow-hidden flex items-center justify-center">
+            <div className="absolute inset-0 bg-gradient-to-br from-to-bg rounded-2xl border app-border-portfolio-p2 overflow-hidden flex items-center justify-center">
               <div className="text-center">
                 <div className="text-8xl mb-4">🚀</div>
                 <p className="app-text-description font-semibold">Frontend Engineer</p>

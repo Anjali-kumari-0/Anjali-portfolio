@@ -155,7 +155,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   placeholder="Anjali Kumari"
-                  className="z-10 w-full px-4 py-3 normal-bg border normal-border rounded-lg app-text-normal placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-portfolio-purple dark:focus:border-portfolio-accent transition-colors"
+                  className="z-10 w-full px-4 py-3 normal-bg border normal-border rounded-lg app-text-normal normal-placeholder focus:outline-none focus-border-portfolio transition-colors"
                 />
               </div>
 
@@ -170,7 +170,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   placeholder="your@email.com"
-                  className=" w-full px-4 py-3 normal-bg border normal-border rounded-lg app-text-normal placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-portfolio-purple dark:focus:border-portfolio-accent transition-colors"
+                  className=" w-full px-4 py-3 normal-bg border normal-border rounded-lg app-text-normal normal-placeholder focus:outline-none focus-border-portfolio transition-colors"
                 />
               </div>
 
@@ -185,7 +185,7 @@ export default function Contact() {
                   required
                   placeholder="Tell me about your project or how I can help..."
                   rows={5}
-                  className="w-full px-4 py-3 normal-bg border normal-border rounded-lg app-text-normal placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-portfolio-purple dark:focus:border-portfolio-accent transition-colors resize-none"
+                  className="w-full px-4 py-3 normal-bg border normal-border rounded-lg app-text-normal normal-placeholder focus:outline-none focus-border-portfolio transition-colors resize-none"
                 />
               </div>
               <div className="z-10">

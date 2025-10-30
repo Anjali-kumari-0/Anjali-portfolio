@@ -38,8 +38,8 @@ export default function Hero() {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 px-4 sm:px-6 lg:px-8">
       {/* Animated Background Elements */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-portfolio-accent/20 rounded-full blur-3xl opacity-50 dark:opacity-30 animate-pulse-slow" />
-      <div className="absolute bottom-20 right-10 w-72 h-72 bg-portfolio-blue/20 rounded-full blur-3xl opacity-50 dark:opacity-30 animate-pulse-slow" style={{ animationDelay: "1s" }} />
+      <div className="absolute top-20 left-10 w-72 h-72 bg-portfolio-accent/20 rounded-full blur-3xl opacity-portfolio animate-pulse-slow" />
+      <div className="absolute bottom-20 right-10 w-72 h-72 bg-portfolio-blue/20 rounded-full blur-3xl opacity-portfolio animate-pulse-slow" style={{ animationDelay: "1s" }} />
 
       <motion.div
         className="max-w-4xl mx-auto text-center relative z-10"
@@ -49,7 +49,7 @@ export default function Hero() {
       >
         {/* Greeting */}
         <motion.div variants={itemVariants} className="mb-6">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-transparent shadow-md shadow-amber-50  normal-bg rounded-full border border-portfolio-accent/30 dark:border-portfolio-accent/30">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-transparent shadow-md shadow-amber-50  normal-bg rounded-full border  app-border-portfolio-p">
             <span className="text-2xl">👋</span>
             <span className="text-sm font-medium app-text-portfolio">Welcome to my portfolio</span>
           </div>
@@ -91,7 +91,7 @@ export default function Hero() {
           <a
             href="/resume.pdf"
             download
-            className="px-8 py-4 border-2 border-portfolio-accent dark:border-portfolio-accent app-text-portfolio rounded-lg font-semibold hover:bg-portfolio-accent/10 dark:hover:bg-portfolio-accent/10 transition-all duration-300"
+            className="px-8 py-4 border-2 app-border-portfolio-primary app-text-portfolio rounded-lg font-semibold hover-bg-portfolio transition-all duration-300"
           >
             Download Resume
           </a>
@@ -125,7 +125,7 @@ export default function Hero() {
           animate="animate"
           className="relative h-80 mt-20"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-portfolio-accent/10 to-portfolio-blue/10 dark:from-portfolio-accent/5 dark:to-portfolio-blue/5 rounded-2xl border border-portfolio-accent/20 dark:border-portfolio-accent/20 overflow-hidden flex items-center justify-center">
+          <div className="absolute inset-0 bg-gradient-to-br from-to-bg2 rounded-2xl border app-border-portfolio-p2 overflow-hidden flex items-center justify-center">
             <div className="text-center">
               <div className="text-6xl mb-4">💻</div>
               <p className="app-text-description font-medium">Building the future of web</p>
@@ -142,8 +142,8 @@ export default function Hero() {
       >
         <div className="flex flex-col items-center gap-2">
           <span className="text-sm app-text-description">Scroll to explore</span>
-          <div className="w-6 h-10 border-2 border-gray-400 dark:border-gray-600 rounded-full flex justify-center">
-            <div className="w-1 h-2 bg-gray-400 dark:bg-gray-600 rounded-full mt-2 animate-pulse" />
+          <div className="w-6 h-10 border-2 normal-border2 rounded-full flex justify-center">
+            <div className="w-1 h-2 normal-bg-three rounded-full mt-2 animate-pulse" />
           </div>
         </div>
       </motion.div>
