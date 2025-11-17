@@ -1,47 +1,48 @@
-@import "tailwindcss";
-
 @layer utilities {
-  /* background  */
+  /* 🌕 Light + Dark Backgrounds */
   .global-bg {
-    @apply bg-slate-950 dark:bg-slate-950;
+    @apply bg-gray-50 dark:bg-slate-950;
   }
   .nav-bg {
-    @apply bg-slate-950/80 dark:bg-slate-950/80;
+    @apply bg-white/80 dark:bg-slate-950/80;
   }
   .normal-bg {
-    @apply bg-slate-900 dark:bg-slate-900;
+    @apply bg-gray-100 dark:bg-slate-900;
   }
   .normal-bg-two {
-    @apply bg-slate-800 dark:bg-slate-800;
+    @apply bg-gray-200 dark:bg-slate-800;
   }
   .normal-bg-three {
-    @apply bg-gray-600 dark:bg-gray-600;
+    @apply bg-gray-300 dark:bg-gray-600;
   }
+
+  /* Gradients */
   .from-to-bg {
     @apply from-portfolio-purple/10 to-portfolio-blue/10 dark:from-portfolio-purple/10 dark:to-portfolio-blue/10;
   }
   .from-to-bg2 {
     @apply from-portfolio-accent/5 to-portfolio-blue/5 dark:from-portfolio-accent/5 dark:to-portfolio-blue/5;
   }
+
   .hover-bg-portfolio {
-    @apply hover:bg-portfolio-accent/10 dark:hover:bg-portfolio-accent/10
+    @apply hover:bg-portfolio-light dark:hover:bg-portfolio-accent/10;
   }
 
   /* 🧭 Text Styles */
   .app-text-primary {
-    @apply text-gray-300 dark:text-gray-300;
+    @apply text-gray-700 dark:text-gray-300;
   }
   .app-text-primary-light {
-    @apply text-gray-200 dark:text-gray-200;
+    @apply text-gray-600 dark:text-gray-200;
   }
   .app-text-hover-primary {
     @apply hover:text-portfolio-accent dark:hover:text-portfolio-accent;
   }
   .app-text-description {
-    @apply text-gray-400 dark:text-gray-400;
+    @apply text-gray-500 dark:text-gray-400;
   }
   .app-text-normal {
-    @apply text-white dark:text-white;
+    @apply text-gray-900 dark:text-white;
   }
   .app-text-portfolio {
     @apply text-portfolio-accent dark:text-portfolio-accent;
@@ -49,13 +50,13 @@
 
   /* 🛡️Border */
   .nav-border {
-    @apply border-slate-800 dark:border-slate-800;
+    @apply border-gray-200 dark:border-slate-800;
   }
   .normal-border {
-    @apply border-slate-700 dark:border-slate-700;
+    @apply border-gray-300 dark:border-slate-700;
   }
   .normal-border2 {
-    @apply border-gray-600 dark:border-gray-600;
+    @apply border-gray-400 dark:border-gray-600;
   }
   .group-hover-border {
     @apply group-hover:border-portfolio-accent dark:group-hover:border-portfolio-accent;
@@ -73,23 +74,21 @@
     @apply border-portfolio-accent/20 dark:border-portfolio-accent/20;
   }
   .dark-border {
-    @apply border-slate-950 dark:border-slate-950;
+    @apply border-gray-900 dark:border-slate-950;
   }
   .dark-border2 {
-    @apply border-slate-900 dark:border-slate-900;
+    @apply border-gray-800 dark:border-slate-900;
   }
   .focus-border-portfolio {
     @apply focus:border-portfolio-accent dark:focus:border-portfolio-accent;
   }
 
-
-  /* placeholder  */
+  /* Placeholder */
   .normal-placeholder {
     @apply placeholder-gray-400 dark:placeholder-gray-400;
   }
 
-
-  /* opacity  */
+  /* Opacity */
   .opacity-portfolio {
     @apply opacity-30 dark:opacity-30;
   }

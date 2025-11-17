@@ -1,17 +1,14 @@
-@import "tailwindcss";
+/* @import "tailwindcss" with (darkMode: "class"); */
 
-/* ध्यान दें: अब कोई tailwind.config.ts फ़ाइल नहीं है। 
-  सारा कॉन्फ़िगरेशन सीधे @theme ब्लॉक में है।
-*/
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
 @import "./styles/Colour.css";
 @theme {
   /*
     ======================================
-    1. COLORS (रंग)
+    1. COLORS
     ======================================
-    हम OKLCH वैल्यूज़ का उपयोग कर रहे हैं।
-    Syntax: <namespace>-<name>: <value>
-    कलर के लिए namespace "color" का उपयोग किया जाता है।
   */
   --color-border: oklch(0.94 0.03 260);
   --color-input: oklch(0.94 0.03 260);
@@ -59,10 +56,8 @@
 
   /*
     ======================================
-    2. BORDER RADIUS (बॉर्डर रेडियस)
+    2. BORDER RADIUS 
     ======================================
-    radius namespace का उपयोग करें।
-    इससे rounded-lg, rounded-md आदि यूटिलिटीज़ बनेंगी।
   */
   --radius-lg: var(--radius, 0.5rem); /* Assuming --radius is defined in :root or similar */
   --radius-md: calc(var(--radius-lg) - 2px);
@@ -71,9 +66,8 @@
 
   /*
     ======================================
-    3. CONTAINER (कंटेनर)
+    3. CONTAINER 
     ======================================
-    container-padding और container-screens को सीधे कॉन्फ़िगर करें।
   */
   --container-padding: 2rem;
   --container-screens-2xl: 1400px;
@@ -81,21 +75,15 @@
   
   /*
     ======================================
-    4. BACKGROUND IMAGE (ग्रेडिएंट्स)
+    4. BACKGROUND IMAGE
     ======================================
-    backgroundImage namespace का उपयोग करें।
+    backgroundImage namespace
   */
   --background-image-gradient-portfolio: linear-gradient(135deg, var(--color-portfolio-purple) 0%, var(--color-portfolio-blue) 100%);
   --background-image-gradient-soft: linear-gradient(135deg, var(--color-portfolio-light) 0%, oklch(0.5 0.15 240 / 0.1) 100%);
 }
 
-/* ======================================
-  5. KEYFRAMES और ANIMATIONS
-  ======================================
-  ये सीधे @theme के अंदर परिभाषित नहीं होते। 
-  आपको keyframes को CSS के @keyframes नियम का उपयोग करके परिभाषित करना होगा, 
-  और फिर उन्हें @theme के अंदर animation namespace में मैप करना होगा।
-*/
+
 
 @keyframes accordion-down {
   from { height: 0; }
@@ -146,15 +134,14 @@
 
 /*
   ======================================
-  6. DARK MODE (डार्क मोड)
+  6. DARK MODE
   ======================================
-  आप डार्क मोड के लिए वैल्यूज़ को .dark क्लास के अंदर सेट करेंगे।
 */
 .dark {
-  /* Dark Mode Colors (उदाहरण के लिए) */
+  /* Dark Mode Colors*/
   --color-background: oklch(0.1 0.01 260);
   --color-foreground: oklch(0.9 0.01 260);
   --color-primary: oklch(0.9 0.01 260);
   --color-primary-foreground: oklch(0.1 0.01 260);
-  /* ... अन्य dark mode variables ... */
+  
 }
