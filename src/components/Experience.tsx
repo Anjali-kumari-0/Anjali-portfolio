@@ -136,7 +136,7 @@ export default function Experience() {
                             {item.company}
                           </p>
                           <p className="app-text-description text-sm">
-                            {item.description}
+                            {item.description} {item.isKnowMore ? <a className="text-sm font-semibold app-text-portfolio" href={item.isKnowMore}>Know More</a> : null}
                           </p>
                           <div className="flex flex-wrap gap-2 pt-2">
                             {item.skills.map((skill, idx) => (

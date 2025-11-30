@@ -92,6 +92,7 @@ export const experienceData = [
       "Comprehensive bootcamp covering modern web development with focus on React, JavaScript, and full-stack development.",
     skills: ["React", "JavaScript", "Node.js"],
     icon: GraduationCap,
+    isKnowMore: '/detail-associate'
   },
   {
     id: 4,
@@ -279,3 +280,7 @@ export const projectCategories = [
   { id: "tailwind", label: "Tailwind CSS" },
   { id: "node", label: "Node.js" },
 ];
+export const associateDetail = {
+  title: "A Year of Consistent Growth and Contribution",
+  description1: "Over the past year, I’ve made 786 contributions to various projects, reflecting my consistency, growth, and commitment to continuous learning. The contribution pattern shows active involvement throughout the year, with peak productivity during mid-year months. This represents regular engagement in development, collaboration, and open-source improvement — highlighting both technical proficiency and discipline in coding practices.",
+}
