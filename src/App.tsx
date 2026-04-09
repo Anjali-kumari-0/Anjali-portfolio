@@ -10,32 +10,47 @@ import Galaxy from "./components/animation/galaxy/Galaxy";
 export default function App() {
   const [isDark, setIsDark] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   useEffect(() => {
-  // 1) Check localStorage preference
-  const saved = localStorage.getItem("darkMode");
+    const saved = localStorage.getItem("darkMode");
 
-  if (saved === "true") {
-    setIsDark(true);
-    document.documentElement.classList.add("dark");
-  } else if (saved === "false") {
-    setIsDark(false);
-    document.documentElement.classList.remove("dark");
-  } else {
-    // 2) No saved preference → use system theme
-    const systemPrefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-
-    setIsDark(systemPrefersDark);
-
-    if (systemPrefersDark) {
+    // 👉 Default = DARK
+    if (saved === null) {
+      setIsDark(true);
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("darkMode", "true");
+    } else if (saved === "true") {
+      setIsDark(true);
       document.documentElement.classList.add("dark");
     } else {
+      setIsDark(false);
       document.documentElement.classList.remove("dark");
     }
-  }
-}, []);
+  }, []);
+  //   useEffect(() => {
+  //   // 1) Check localStorage preference
+  //   const saved = localStorage.getItem("darkMode");
+
+  //   if (saved === "true") {
+  //     setIsDark(true);
+  //     document.documentElement.classList.add("dark");
+  //   } else if (saved === "false") {
+  //     setIsDark(false);
+  //     document.documentElement.classList.remove("dark");
+  //   } else {
+  //     // 2) No saved preference → use system theme
+  //     const systemPrefersDark = window.matchMedia(
+  //       "(prefers-color-scheme: dark)"
+  //     ).matches;
+
+  //     setIsDark(systemPrefersDark);
+
+  //     if (systemPrefersDark) {
+  //       document.documentElement.classList.add("dark");
+  //     } else {
+  //       document.documentElement.classList.remove("dark");
+  //     }
+  //   }
+  // }, []);
 
   const toggleDarkMode = () => {
     setIsDark((prev) => {
