@@ -5,7 +5,7 @@ interface BlogType {
   title: string;
   steps: {
     title: string;
-    stepsDes: JSX.Element;
+    stepsDes:  React.ReactNode;
     des?: string;
   }[];
 }
