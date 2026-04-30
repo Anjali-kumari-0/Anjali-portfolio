@@ -4,6 +4,7 @@ import { Moon, Sun, Menu, X } from "lucide-react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Galaxy from "./components/animation/galaxy/Galaxy";
+import ProjectView from "./components/projectView/projectView";
 // import "./styles/Colour.css";
 // import { cn } from "./lib/utils";
 
@@ -70,6 +71,7 @@ export default function App() {
     { label: "About", href: "#about" },
     { label: "Skills", href: "#skills" },
     { label: "Projects", href: "#projects" },
+    { label: "Custom Component project", href: "#custom-component-project" },
     { label: "Experience", href: "#experience" },
     { label: "Contact", href: "#contact" },
   ];
@@ -98,7 +100,7 @@ export default function App() {
               {navLinks.map((link) => (
                 <a
                   key={link.label}
-                  href={link.href}
+                  href={`/${link.href}`}
                   className="text-sm font-medium app-text-primary app-text-hover-primary transition-colors"
                 >
                   {link.label}
@@ -159,6 +161,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="/project" element={<ProjectView/>} />
           </Routes>
         </main>
         {/* </div> */}
@@ -170,7 +173,7 @@ export default function App() {
             left: 0,
             width: "100%",
             height: "100%",
-            // zIndex: -1,
+            zIndex: 0,
           }}
         >
           <Galaxy

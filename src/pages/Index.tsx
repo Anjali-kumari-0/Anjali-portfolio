@@ -5,6 +5,7 @@ import Projects from "../components/Projects";
 import Experience from "../components/Experience";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+import CustomComponentProject from "@/components/CustomComponentProject";
 
 export default function Index() {
   return (
@@ -12,6 +13,7 @@ export default function Index() {
       <Hero />
       <About />
       <Skills />
+      <CustomComponentProject />
       <Projects />
       <Experience />
       <Contact />
