@@ -9,10 +9,11 @@ export const allProjectDetails = [
       "A powerful select component supporting both static and server-side data, featuring async search, debouncing, caching, virtualization, and multi-select capabilities for handling large-scale datasets efficiently.",
 
     implementation: {
-      type: "code", // "code" | "image" | "sandbox"
-      previewImage: "/images/smart-select.png",
-      demoLink: "https://your-demo-link.com",
-      codeLink: "https://github.com/your-repo",
+      type: "code",
+      // preview1: "src/assets/singleSelect1.png",
+      // preview2: "src/assets/singleSelect1.png",
+      demo: "src/assets/singleSelectVideo.mp4",
+      source: "",
     },
 
     documentation: {
@@ -24,10 +25,20 @@ export const allProjectDetails = [
         { name: "isMulti", type: "boolean", required: false },
       ],
       usage: `
-<SmartSelect
-  loadOptions={fetchUsers}
-  isMulti
+// All props list
+// options, fetchOptions, isServerPagination, onValueChange, defaultValue, placeholder, variant, className, disabled,
+
+<Single_select
+  defaultValue={stableValue}
+  options={options}
+  placeholder={placeholder}
+  variant="outline"
+  key={'select-wrapper-' + id}
+  className="w-full"
+  onValueChange={(s) => onChange(s)}
 />
+/* Want this in your project? Get the complete source code and customization support 
+ — contact now. */
       `,
     },
 
@@ -172,15 +183,98 @@ export const allProjectDetails = [
     ],
 
     // engineeringNotes: {
-      challenges: [
-        "Maintaining visual consistency across different UI sections",
-        "Ensuring accessibility with proper contrast and labels",
-      ],
-      improvements: [
-        "Add animation for better visual feedback",
-        "Support tooltip integration",
-        "Add size variants (small, medium, large)",
-      ],
+    challenges: [
+      "Maintaining visual consistency across different UI sections",
+      "Ensuring accessibility with proper contrast and labels",
+    ],
+    improvements: [
+      "Add animation for better visual feedback",
+      "Support tooltip integration",
+      "Add size variants (small, medium, large)",
+    ],
+  },
+  {
+    id: "sidebar", // always kebab-case (URL friendly)
+    title: "Sidebar",
+
+    tagline: "High-performance hybrid select with async + static data support",
+
+    description:
+      "A powerful select component supporting both static and server-side data, featuring async search, debouncing, caching, virtualization, and multi-select capabilities for handling large-scale datasets efficiently.",
+
+    implementation: {
+      type: "code", // "code" | "image" | "sandbox"
+      previewImage: "/images/smart-select.png",
+      demo: "src/assets/sidebarvideo.mp4",
+      codeLink: "https://github.com/your-repo",
     },
-  // },
+
+    documentation: {
+      overview:
+        "SmartSelect is designed for enterprise applications where dropdowns need to handle large datasets efficiently.",
+      props: [
+        { name: "options", type: "Option[]", required: false },
+        { name: "loadOptions", type: "(input) => Promise", required: false },
+        { name: "isMulti", type: "boolean", required: false },
+      ],
+      usage: `
+<Sidebar
+  config={sidebarConfig}
+  activePath={activePath}
+  onNavigate={(path: string) => {
+  setActivePath(path);
+    }}
+  variant={"dark"}
+  /* Want this in your project? Get the complete source code and customization support 
+ — contact now. */
+/>
+      `,
+    },
+
+    features: [
+      "Supports static and async data",
+      "Debounced API search",
+      "Virtualized list for performance",
+      "Keyboard navigation",
+      "Multi-select support",
+      "Custom rendering (labels, options)",
+      "Loading & error states",
+    ],
+
+    implementedTechnologies: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "React Query",
+      "Zustand",
+    ],
+
+    complexity: "High", // Low | Medium | High
+
+    category: "Form Components",
+
+    tags: ["select", "async", "performance", "reusable"],
+
+    useCases: [
+      "User selection from large datasets",
+      "Searchable dropdowns in enterprise apps",
+      "Dynamic API-driven forms",
+    ],
+
+    challenges: [
+      "Handling large datasets without performance issues",
+      "Managing async race conditions",
+      "Ensuring accessibility and keyboard navigation",
+    ],
+
+    improvements: [
+      "Add AI-based suggestions",
+      "Add grouped options support",
+      "Add server-side pagination",
+    ],
+
+    status: "Completed", // Completed | In Progress
+
+    createdAt: "2026-04-29",
+  },
 ];

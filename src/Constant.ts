@@ -195,6 +195,11 @@ export const projectComponentData = [
     title: "Feature Highlight",
     href: "feature-highlight",
   },
+  {
+    id: 2,
+    title: "Sidebar",
+    href: "sidebar",
+  },
   // {
   //   id: 1,
   //   title: "Smart Form Builder",

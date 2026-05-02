@@ -11,12 +11,12 @@ export default function CustomComponentProject() {
     const [debouncedSearch, setDebouncedSearch] = useState("");
     const [searchQuery, setSearchQuery] = useState("");
     useEffect(() => {
-  const timer = setTimeout(() => {
-    setDebouncedSearch(searchQuery);
-  }, 300);
+        const timer = setTimeout(() => {
+            setDebouncedSearch(searchQuery);
+        }, 300);
 
-  return () => clearTimeout(timer);
-}, [searchQuery]);
+        return () => clearTimeout(timer);
+    }, [searchQuery]);
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -53,16 +53,16 @@ export default function CustomComponentProject() {
         },
     };
 
-const handleOpenProject = (href: string) => {
-    navigate(`/project#${href}`)
+    const handleOpenProject = (href: string) => {
+        navigate(`/project#${href}`)
 
-}
+    }
 
     const filteredProjects = projectComponentData.filter((project) => {
-  const search = debouncedSearch.toLowerCase();
+        const search = debouncedSearch.toLowerCase();
 
-  return project.title.toLowerCase().includes(search);
-});
+        return project.title.toLowerCase().includes(search);
+    });
 
     return (
         <section id="custom-component-project" className="min-h-screen flex items-center py-20 px-4 sm:px-6 lg:px-8">
@@ -103,9 +103,9 @@ const handleOpenProject = (href: string) => {
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
                 >
-                    <Input placeholder="Search projects..." className="z-20 w-full md:w-auto text-white" 
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                     />
+                    <Input placeholder="Search projects..." className="z-20 w-full md:w-auto text-white"
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                    />
                 </motion.div>
 
                 {/* Projects Grid */}
