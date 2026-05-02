@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, easeOut } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
-import { projectCategories, projectComponentData } from "@/Constant";
+import { projectComponentData } from "@/Constant";
 import { useNavigate } from "react-router";
 import { Input } from "./ui/input";
 

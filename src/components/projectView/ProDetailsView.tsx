@@ -7,10 +7,11 @@ interface ProjectDetailsProps {
 
 const ProjectDetails: React.FC<ProjectDetailsProps> = ({ id }) => {
     const [toShow, setShow] = React.useState<string | null>("demo");
-    const project = allProjectDetails.find((item) => item.id === id);
+    const project = allProjectDetails.find((item) => item.id === id) || null;
+
 
     if (!project) {
-        return <div className="p-6 text-red-500">Project Not Found</div>;
+        return <div className="p-6 text-red-500">Project Under Construction</div>;
     }
     const showList = [
         {
@@ -114,20 +115,21 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ id }) => {
                     {/* images */}
                     <div className="relative z-20 rounded-lg">{
                         toShow === "demo" ? (
-                            <div className="flex flex-col gap-4"><video
+                            <div className="flex flex-col gap-4">
+                                {project.implementation?.demo &&<video
                                 className="w-full h-full object-cover rounded-lg"
                                 src={project.implementation?.demo}
                                 autoPlay
                                 loop
                                 muted
                                 playsInline
-                            />
+                            />}
                                 <div className="flex gap-4">{project.implementation?.preview1 && (<img className="max-w-full h-auto object-contain" src={project.implementation?.preview1} alt="Code" />)}
                                     {project.implementation?.preview2 && (<img className="max-w-full h-auto object-contain" src={project.implementation?.preview2} alt="Code" />)}
                                 </div>
                             </div>
                         ) : toShow === "usageCode" ? (
-                            <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm">
+                            <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto overflow-y-auto text-sm">
                                 <code>
                                     {project.documentation.usage}
                                 </code>

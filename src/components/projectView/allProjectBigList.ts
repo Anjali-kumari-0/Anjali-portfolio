@@ -277,4 +277,137 @@ export const allProjectDetails = [
 
     createdAt: "2026-04-29",
   },
+  {
+    id: "dateFormatter", // always kebab-case (URL friendly)
+    title: "Date Formatter",
+
+    tagline: "High-performance hybrid Date Formatter with async + static data support",
+
+    description:
+      "A powerful date formatter component supporting both static and server-side data, featuring async formatting, caching, and localization capabilities for handling large-scale datasets efficiently.",
+
+    implementation: {
+      type: "code",
+      preview1: "src/assets/dateFormatter.png",
+      // preview2: "src/assets/singleSelect1.png",
+      // demo: "src/assets/singleSelectVideo.mp4",
+      source: "",
+    },
+
+    documentation: {
+      overview:
+        "SmartSelect is designed for enterprise applications where dropdowns need to handle large datasets efficiently.",
+      props: [
+        { name: "options", type: "Option[]", required: false },
+        { name: "loadOptions", type: "(input) => Promise", required: false },
+        { name: "isMulti", type: "boolean", required: false },
+      ],
+      usage: `
+******* Relative / Smart *******
+relative            → "1 day ago"
+relativeFull        → "yesterday"
+smart               → "Yesterday"
+todayFriendly       → "Yesterday"
+yesterdayWithTime   → "Yesterday at 02:30 PM"
+dayOnly             → "Tuesday"
+dateWithDayShort    → "Tue, 29 Oct"
+friendly            → "29 Oct, 02:30 PM"
+
+******* Standard *******
+dd/MM/yyyy          → "29/10/2024"
+MM/dd/yyyy          → "10/29/2024"
+yyyy/MM/dd          → "2024/10/29"
+dd-MM-yyyy          → "29-10-2024"
+yyyy-MM-dd          → "2024-10-29"
+dd MMM yyyy         → "29 Oct 2024"
+MMM dd, yyyy        → "Oct 29, 2024"
+dd MMM time12h      → "29 Oct, 02:30 PM"
+dd MMM              → "29 Oct"
+
+******* Time *******
+time12h             → "02:30 PM"
+time24h             → "14:30"
+timeWithSeconds     → "14:30:00"
+timeWithZone        → "02:30 PM IST"
+
+******* ISO / Technical *******
+isoFull             → "2024-10-29T09:00:00.000Z"
+timestamp           → "1730197800000"
+unix                → "1730197800"
+utcString           → "Tue, 29 Oct 2024 09:00:00 GMT"
+
+******* Business *******
+monthYear           → "Oct 2024"
+quarter             → "Q4 2024"
+weekNumber          → "Week 44"
+financialYear       → "FY 2024-25"
+
+******* Compact / UI *******
+tiny                → "29 Oct"
+superTiny           → "29/10"
+badge               → "Oct 29"
+chatFormat          → "Yesterday"
+
+******* Range ******
+dateRange           → "29 Oct – 31 Oct"
+dateTimeRange       → "29 Oct, 02:30 PM – 05:30 PM"
+relativeRange       → "Last 7 days"
+
+*******  Locale *******
+localeAuto          → "10/29/2024, 2:30:00 PM" (depends on system)
+indiaFormat         → "29 Oct 2024"
+usFormat            → "10/29/2024"
+
+
+/* Want this in your project? Get the complete source code and customization support 
+ — contact now. */
+      `,
+    },
+
+    features: [
+      "Supports static and async data",
+      "Debounced API search",
+      "Virtualized list for performance",
+      "Keyboard navigation",
+      "Multi-select support",
+      "Custom rendering (labels, options)",
+      "Loading & error states",
+    ],
+
+    implementedTechnologies: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "React Query",
+      "Zustand",
+    ],
+
+    complexity: "High", // Low | Medium | High
+
+    category: "Form Components",
+
+    tags: ["select", "async", "performance", "reusable"],
+
+    useCases: [
+      "User selection from large datasets",
+      "Searchable dropdowns in enterprise apps",
+      "Dynamic API-driven forms",
+    ],
+
+    challenges: [
+      "Handling large datasets without performance issues",
+      "Managing async race conditions",
+      "Ensuring accessibility and keyboard navigation",
+    ],
+
+    improvements: [
+      "Add AI-based suggestions",
+      "Add grouped options support",
+      "Add server-side pagination",
+    ],
+
+    status: "Completed", // Completed | In Progress
+
+    createdAt: "2026-04-29",
+  },
 ];

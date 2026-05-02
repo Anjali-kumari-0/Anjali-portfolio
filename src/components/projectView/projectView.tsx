@@ -16,8 +16,8 @@ const ProjectView = () => {
         setSelectedCategory(id);
     }, [location]);
     const selectedCategoryView = (category: string) => {
+        if(!category) return <div className="p-6 text-gray-500">Under Construction: Please Select another project to view details</div>;
         return <ProjectDetails id={category} />;
-
     }
     return (
         <div className='flex w-full '>

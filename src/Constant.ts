@@ -187,7 +187,7 @@ export const skillsData = [
 export const projectComponentData = [
   {
     id: 0,
-    title: "Smart Select  comp",
+    title: "Smart Select comp",
     href: "SmartSelect",
   },
   {
@@ -200,6 +200,11 @@ export const projectComponentData = [
     title: "Sidebar",
     href: "sidebar",
   },
+  {
+    id: 3,
+    title: "Date Formatter",
+    href: "dateFormatter",
+  },
   // {
   //   id: 1,
   //   title: "Smart Form Builder",
@@ -209,60 +214,62 @@ export const projectComponentData = [
   //     "Drag-and-drop form builder with conditional logic, dynamic field rendering from JSON, auto validation generation, and reusable schema-based form creation."
   // },
   {
-    id: 2,
-    title: "Workflow Builder (Node-based UI)",
-    href: "WorkflowBuilder",
-    description:
-      "Interactive node-based flow builder where users can create pipelines by connecting nodes, configure each node, and visualize execution flow."
-  },
-  {
-    id: 3,
-    title: "Advanced Data Grid",
-    href: "AdvancedDataGrid",
-    description:
-      "Excel-like table with inline editing, column pinning, virtual scrolling, keyboard navigation, undo/redo functionality, and high performance for large datasets."
-  },
-  {
     id: 4,
-    title: "Real-time Collaborative Editor",
-    href: "CollaborativeEditor",
-    description:
-      "Multi-user editing component with live cursor tracking, real-time updates using WebSockets, and conflict resolution similar to Google Docs."
+    title: "Server/Custom PDF Generator (JSON to PDF)",
+    href: "pdfGenerator",
   },
   {
     id: 5,
-    title: "Rule Engine Builder",
+    title: "Progress bar",
+    href: "progressBar",
+    description:"",
+  },
+  {
+    id: 6,
+    title: "Chart",
+    href: "chart",
+    description:
+      "Interactive chart component with support for various chart types, real-time data updates, and customizable styling options."
+  },
+  {
+    id: 7,
+    title: "Badge",
     href: "#RuleEngineBuilder",
     description:
       "UI to create logical conditions (IF/AND/OR) and generate rule-based JSON configurations for decision-making systems."
   },
   {
     id: 6,
-    title: "Schema-driven UI Renderer",
+    title: "Multi Select Dropdown",
+    href: "multiSelectDropdown",
     description:
       "Render complete UI (forms, tables, cards) dynamically based on backend-provided JSON schema without hardcoding layouts."
   },
   {
     id: 7,
-    title: "Animation Timeline Editor",
+    title: "Input",
+    href: "input",
     description:
       "Timeline-based editor allowing users to drag, resize, and sequence animations or media clips similar to video editing tools."
   },
   {
     id: 8,
-    title: "Permission-based UI Renderer",
+    title: "Smart Search like github",
+    href: "smartSearch",
     description:
       "Component system that dynamically shows or hides UI elements based on user roles and permissions."
   },
   {
     id: 9,
-    title: "API Playground",
+    title: "Tab",
+    href: "tab",
     description:
       "Interactive UI for testing APIs with support for headers, query params, request body, and formatted response preview."
   },
   {
     id: 10,
-    title: "AI-powered Search Component",
+    title: "Side-sheet",
+    href: "sideSheet",
     description:
       "Smart search with fuzzy matching, ranking, suggestions, typo tolerance, and highlighted results."
   }
