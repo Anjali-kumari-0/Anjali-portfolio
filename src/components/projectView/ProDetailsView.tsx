@@ -116,6 +116,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ id }) => {
                     <div className="relative z-20 rounded-lg">{
                         toShow === "demo" ? (
                             <div className="flex flex-col gap-4">
+                                {project.implementation?.message && <p>{project.implementation.message}</p>}
                                 {project.implementation?.demo &&<video
                                 className="w-full h-full object-cover rounded-lg"
                                 src={project.implementation?.demo}

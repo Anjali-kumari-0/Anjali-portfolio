@@ -92,7 +92,7 @@ export const experienceData = [
       "Comprehensive bootcamp covering modern web development with focus on React, JavaScript, and full-stack development.",
     skills: ["React", "JavaScript", "Node.js"],
     icon: GraduationCap,
-    isKnowMore: '/detail-associate'
+    isKnowMore: "/detail-associate",
   },
   {
     id: 4,
@@ -222,57 +222,57 @@ export const projectComponentData = [
     id: 5,
     title: "Progress bar",
     href: "progressBar",
-    description:"",
+    description: "",
   },
   {
     id: 6,
     title: "Chart",
     href: "chart",
     description:
-      "Interactive chart component with support for various chart types, real-time data updates, and customizable styling options."
+      "Interactive chart component with support for various chart types, real-time data updates, and customizable styling options.",
   },
   {
     id: 7,
     title: "Badge",
-    href: "#RuleEngineBuilder",
+    href: "badge",
     description:
-      "UI to create logical conditions (IF/AND/OR) and generate rule-based JSON configurations for decision-making systems."
+      "UI to create logical conditions (IF/AND/OR) and generate rule-based JSON configurations for decision-making systems.",
   },
   {
-    id: 6,
+    id: 8,
     title: "Multi Select Dropdown",
     href: "multiSelectDropdown",
     description:
-      "Render complete UI (forms, tables, cards) dynamically based on backend-provided JSON schema without hardcoding layouts."
+      "Render complete UI (forms, tables, cards) dynamically based on backend-provided JSON schema without hardcoding layouts.",
   },
   {
-    id: 7,
+    id: 9,
     title: "Input",
     href: "input",
     description:
-      "Timeline-based editor allowing users to drag, resize, and sequence animations or media clips similar to video editing tools."
+      "Timeline-based editor allowing users to drag, resize, and sequence animations or media clips similar to video editing tools.",
   },
   {
     id: 8,
     title: "Smart Search like github",
     href: "smartSearch",
     description:
-      "Component system that dynamically shows or hides UI elements based on user roles and permissions."
+      "Component system that dynamically shows or hides UI elements based on user roles and permissions.",
   },
   {
     id: 9,
     title: "Tab",
     href: "tab",
     description:
-      "Interactive UI for testing APIs with support for headers, query params, request body, and formatted response preview."
+      "Interactive UI for testing APIs with support for headers, query params, request body, and formatted response preview.",
   },
   {
     id: 10,
     title: "Side-sheet",
     href: "sideSheet",
     description:
-      "Smart search with fuzzy matching, ranking, suggestions, typo tolerance, and highlighted results."
-  }
+      "Smart search with fuzzy matching, ranking, suggestions, typo tolerance, and highlighted results.",
+  },
 ];
 export const projectsData = [
   // {
@@ -372,5 +372,6 @@ export const projectCategories = [
 ];
 export const associateDetail = {
   title: "A Year of Consistent Growth and Contribution",
-  description1: "Over the past year, I’ve made 786 contributions to various projects, reflecting my consistency, growth, and commitment to continuous learning. The contribution pattern shows active involvement throughout the year, with peak productivity during mid-year months. This represents regular engagement in development, collaboration, and open-source improvement — highlighting both technical proficiency and discipline in coding practices.",
-}
+  description1:
+    "Over the past year, I’ve made 786 contributions to various projects, reflecting my consistency, growth, and commitment to continuous learning. The contribution pattern shows active involvement throughout the year, with peak productivity during mid-year months. This represents regular engagement in development, collaboration, and open-source improvement — highlighting both technical proficiency and discipline in coding practices.",
+};

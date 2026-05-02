@@ -281,7 +281,8 @@ export const allProjectDetails = [
     id: "dateFormatter", // always kebab-case (URL friendly)
     title: "Date Formatter",
 
-    tagline: "High-performance hybrid Date Formatter with async + static data support",
+    tagline:
+      "High-performance hybrid Date Formatter with async + static data support",
 
     description:
       "A powerful date formatter component supporting both static and server-side data, featuring async formatting, caching, and localization capabilities for handling large-scale datasets efficiently.",
@@ -408,6 +409,342 @@ usFormat            → "10/29/2024"
 
     status: "Completed", // Completed | In Progress
 
+    createdAt: "2026-04-29",
+  },
+
+  {
+    id: "pdfGenerator",
+    title: "Custom PDF Generator (JSON to PDF)",
+
+    tagline: "Dynamically generate structured PDFs from JSON data",
+
+    description:
+      "A reusable and scalable module that converts structured JSON data into well-formatted PDF documents. Supports dynamic layouts, styling, and efficient rendering for large datasets.",
+
+    implementation: {
+      type: "code",
+      message:"Under development. Contact for early access and collaboration opportunities.",
+      demo: "",
+      source: "",
+    },
+
+    documentation: {
+      overview:
+        "Transforms JSON input into downloadable PDF files with configurable layout and styling.",
+
+      props: [
+        { name: "data", type: "Record<string, any>", required: true },
+        { name: "fileName", type: "string", required: false },
+      ],
+
+      usage: `
+<PDFGenerator data={data} fileName="report.pdf" />
+      `,
+    },
+
+    features: [
+      "Dynamic JSON to PDF conversion",
+      "Custom layout and styling",
+      "Reusable architecture",
+      "Handles large data efficiently",
+    ],
+
+    implementedTechnologies: ["React", "TypeScript", "Tailwind CSS", "Zustand"],
+
+    complexity: "High",
+    category: "Utility",
+    tags: ["pdf", "generator", "json", "export"],
+
+    useCases: [
+      "Invoices and reports generation",
+      "Exporting dashboard data",
+      "Admin panel document downloads",
+    ],
+
+    challenges: [
+      "Handling large JSON data",
+      "Maintaining layout consistency",
+      "Performance optimization",
+    ],
+
+    improvements: [
+      "Template-based PDF generation",
+      "Add chart/image support",
+      "Server-side rendering",
+    ],
+
+    status: "Completed",
+    createdAt: "2026-04-29",
+  },
+
+  {
+    title: "Progress Bar",
+    id: "progressBar",
+
+    tagline: "Interactive progress indicator with smooth animation",
+
+    description:
+      "A reusable progress bar component to visually represent task completion with customizable styles and smooth transitions.",
+
+    implementation: {
+      type: "code",
+      message:"Under development. Contact for early access and collaboration opportunities.",
+      demo: "",
+      source: "",
+    },
+
+    documentation: {
+      overview:
+        "Displays progress dynamically based on numeric values with animation support.",
+
+      props: [
+        { name: "value", type: "number", required: true },
+        { name: "max", type: "number", required: false },
+      ],
+
+      usage: `<ProgressBar value={70} />`,
+    },
+
+    features: [
+      "Smooth animation",
+      "Customizable styling",
+      "Responsive design",
+      "Dynamic updates",
+    ],
+
+    implementedTechnologies: ["React", "TypeScript", "Tailwind CSS"],
+
+    complexity: "Medium",
+    category: "UI",
+    tags: ["progress", "ui", "animation"],
+
+    useCases: [
+      "File upload progress",
+      "Form completion tracking",
+      "Task progress visualization",
+    ],
+
+    challenges: ["Smooth animation performance", "Edge case handling (0–100%)"],
+
+    improvements: ["Add labels/percentage display", "Support striped variants"],
+
+    status: "Completed",
+    createdAt: "2026-04-29",
+  },
+
+  {
+    title: "Chart",
+    id: "chart",
+
+    tagline: "Reusable data visualization component",
+
+    description:
+      "A flexible chart component for visualizing data using dynamic datasets. Supports multiple chart types and responsive rendering.",
+
+    implementation: {
+      type: "code",
+      message:"Under development. Contact for early access and collaboration opportunities.",
+      demo: "",
+      source: "",
+    },
+
+    documentation: {
+      overview:
+        "Renders charts dynamically based on provided dataset and configuration.",
+
+      props: [
+        { name: "data", type: "object[]", required: true },
+        { name: "type", type: "string", required: true },
+      ],
+
+      usage: `<Chart data={data} type="bar" />`,
+    },
+
+    features: [
+      "Supports multiple chart types",
+      "Dynamic data binding",
+      "Responsive layout",
+      "Reusable component design",
+    ],
+
+    implementedTechnologies: ["React", "TypeScript", "Tailwind CSS"],
+
+    complexity: "High",
+    category: "Data Visualization",
+    tags: ["chart", "data", "visualization"],
+
+    useCases: [
+      "Analytics dashboards",
+      "Reports and insights",
+      "Data monitoring tools",
+    ],
+
+    challenges: ["Handling dynamic datasets", "Performance with large data"],
+
+    improvements: ["Add animations", "Add export/download charts"],
+
+    status: "Completed",
+    createdAt: "2026-04-29",
+  },
+
+  {
+    title: "Input",
+    id: "input",
+
+    tagline: "Reusable and customizable input component",
+
+    description:
+      "A flexible input component supporting validation, error handling, and multiple input types for scalable form development.",
+
+    implementation: {
+      type: "code",
+      message:"Under development. Contact for early access and collaboration opportunities.",
+      demo: "",
+      source: "",
+    },
+
+    documentation: {
+      overview:
+        "Handles user input with validation and customizable configurations.",
+
+      props: [
+        { name: "value", type: "string", required: true },
+        { name: "onChange", type: "function", required: true },
+        { name: "type", type: "string", required: false },
+      ],
+
+      usage: `<Input value={value} onChange={setValue} />`,
+    },
+
+    features: [
+      "Validation support",
+      "Error handling",
+      "Customizable UI",
+      "Reusable across forms",
+    ],
+
+    implementedTechnologies: ["React", "TypeScript", "Tailwind CSS"],
+
+    complexity: "Medium",
+    category: "Form",
+    tags: ["input", "form", "validation"],
+
+    useCases: ["User forms", "Authentication fields", "Dynamic form inputs"],
+
+    challenges: [
+      "Handling validation efficiently",
+      "Managing controlled inputs",
+    ],
+
+    improvements: ["Add debounce support", "Add accessibility improvements"],
+
+    status: "Completed",
+    createdAt: "2026-04-29",
+  },
+
+  {
+    title: "Multi Select Dropdown",
+    id: "multiSelectDropdown",
+
+    tagline: "Searchable multi-select dropdown with async support",
+
+    description:
+      "A powerful multi-select dropdown component supporting search, async data loading, and efficient rendering for large datasets.",
+
+    implementation: {
+      type: "code",
+      message:"Under development. Contact for early access and collaboration opportunities.",
+      demo: "",
+      source: "",
+    },
+
+    documentation: {
+      overview:
+        "Allows selecting multiple options with search and async data support.",
+
+      props: [
+        { name: "options", type: "Option[]", required: true },
+        { name: "value", type: "Option[]", required: false },
+      ],
+
+      usage: `<MultiSelect options={options} />`,
+    },
+
+    features: [
+      "Multi-select support",
+      "Search functionality",
+      "Async data handling",
+      "High performance",
+    ],
+
+    implementedTechnologies: [
+      "React",
+      "TypeScript",
+      "React Query",
+      "Tailwind CSS",
+    ],
+
+    complexity: "High",
+    category: "Form",
+    tags: ["dropdown", "multi-select", "search"],
+
+    useCases: ["Tag selection", "Filters", "Dynamic forms"],
+
+    challenges: ["Handling large datasets", "Debounced search optimization"],
+
+    improvements: ["Add virtualization", "Keyboard navigation support"],
+
+    status: "Completed",
+    createdAt: "2026-04-29",
+  },
+
+  {
+    title: "Badge",
+    id: "badge",
+
+    tagline: "Lightweight status indicator component",
+
+    description:
+      "A small and reusable badge component used for displaying status, labels, or categories with customizable styles.",
+
+    implementation: {
+      type: "code",
+      message:"Under development. Contact for early access and collaboration opportunities.",
+      demo: "",
+      source: "",
+    },
+
+    documentation: {
+      overview:
+        "Displays small labels or status indicators with flexible styling.",
+
+      props: [
+        { name: "label", type: "string", required: true },
+        { name: "variant", type: "string", required: false },
+      ],
+
+      usage: `<Badge label="Active" />`,
+    },
+
+    features: [
+      "Lightweight component",
+      "Customizable styles",
+      "Reusable design",
+    ],
+
+    implementedTechnologies: ["React", "TypeScript", "Tailwind CSS"],
+
+    complexity: "Low",
+    category: "UI",
+    tags: ["badge", "status", "ui"],
+
+    useCases: ["Status indicators", "Tags and labels", "Notifications"],
+
+    challenges: ["Maintaining consistent styles"],
+
+    improvements: ["Add icons support", "Add color variants"],
+
+    status: "Completed",
     createdAt: "2026-04-29",
   },
 ];
