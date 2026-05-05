@@ -118,8 +118,9 @@ export const experienceData = [
   },
 ];
 export const skillsHeader = {
-  title: "My Skills",
-  description: "Expertise in modern web technologies and frameworks",
+  topTitle: "What I Do",
+  title: "Building End-to-End Solutions",
+  description: "I create robust and user-friendly applications from frontend to backend, ensuring seamless performance and scalability.",
 };
 export const skillsData = [
   // for skills section
@@ -304,12 +305,12 @@ export const projectsData = [
     title: "Portfolio Website",
     description:
       "Interactive portfolio showcase with smooth animations, dark mode support, and responsive design across all devices.",
-    image: "💼",
+    image: "src/assets/porfolio.png",
     category: "tailwind",
     tags: ["React", "Tailwind", "Animations"],
     links: {
-      github: "#",
-      live: "#",
+      github: "https://github.com/Anjali-kumari-0/Anjali-portfolio",
+      live: "https://anjali-portfolio-wheat.vercel.app/",
     },
   },
   // {
@@ -329,12 +330,12 @@ export const projectsData = [
     title: "Chat Application",
     description:
       "Real-time messaging application with WebSocket integration, user presence indicators, and message history.",
-    image: "💬",
+    image: "src/assets/chatApp1.png",
     category: "node",
     tags: ["React", "Node.js", "WebSocket"],
     links: {
-      github: "#",
-      live: "#",
+      github: "https://github.com/Anjali-kumari-0/kaise-ho",
+      live: "https://kaiseho-ui.web.app/",
     },
   },
   // {
@@ -354,12 +355,12 @@ export const projectsData = [
     title: "UI Component Library",
     description:
       "A reusable UI component library built 'Single_select', 'multi_select' etc...",
-    image: "🎨",
+    image: "src/assets/customComp.png",
     category: "frontend",
     tags: ["React", "TypeScript", "Tailwind"],
     links: {
       github: "#",
-      live: "#",
+      live: "/project#SmartSelect",
     },
   },
 ];

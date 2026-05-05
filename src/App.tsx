@@ -68,7 +68,7 @@ export default function App() {
 
   const navLinks = [
     { label: "Home", href: "#home" },
-    { label: "About", href: "#about" },
+    // { label: "About", href: "#about" },
     { label: "Skills", href: "#skills" },
     { label: "Projects", href: "#projects" },
     { label: "Custom Component project", href: "#custom-component-project" },
@@ -190,3 +190,24 @@ export default function App() {
     </BrowserRouter>
   );
 }
+
+// // App.jsx
+// import { useState } from "react";
+// import { sidebarConfig } from "./components/_customComponent/sidebar/sidebar.config";
+// import Sidebar from "./components/_customComponent/sidebar/Sidebar";
+
+// export default function App() {
+//   const [activePath, setActivePath] = useState("/dashboard");
+
+//   return (
+//     <Sidebar
+//       config={sidebarConfig}
+//       activePath={activePath}
+//       onNavigate={(path: string) => {
+//         console.log("Navigate to:", path);
+//         setActivePath(path);
+//       }}
+//       variant={"dark"}
+//     />
+//   );
+// }

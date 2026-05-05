@@ -1,5 +1,6 @@
 import { skillsData, skillsHeader } from "@/Constant";
 import { easeOut, motion } from "framer-motion";
+import { skills } from "./data/skills";
 
 export default function Skills() {
   const containerVariants = {
@@ -54,15 +55,17 @@ export default function Skills() {
         >
           <motion.h2
             variants={itemVariants}
-            className="text-4xl lg:text-5xl font-bold mb-4"
+            className="text-2xl lg:text-5xl font-bold mb-4"
           >
-            <span className="bg-gradient-to-r from-portfolio-purple to-portfolio-blue bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-portfolio-purple to-portfolio-blue bg-clip-text text-transparent text-xs">{skillsHeader?.topTitle}</span>
+            <br />
+            <span className="bg-gradient-to-r from-portfolio-light to-portfolio-blue bg-clip-text text-transparent">
               {skillsHeader?.title}
             </span>
           </motion.h2>
           <motion.p
             variants={itemVariants}
-            className="app-text-description text-lg max-w-2xl mx-auto"
+            className="app-text-description text-base max-w-2xl mx-auto"
           >
             {skillsHeader?.description}
           </motion.p>
@@ -80,7 +83,7 @@ export default function Skills() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          {skillsData?.map((skill, index) => (
+          {skills?.map((skill, index) => (
             <motion.div
               key={index}
               variants={cardVariants}

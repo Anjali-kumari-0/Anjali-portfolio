@@ -6,12 +6,14 @@ import Experience from "../components/Experience";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import CustomComponentProject from "@/components/CustomComponentProject";
+import { TechStack } from "@/components/_my/TechStack";
 
 export default function Index() {
   return (
     <div className="relative w-full min-h-screen global-bg">
       <Hero />
-      <About />
+      <TechStack />
+      {/* <About /> */}
       <Skills />
       <CustomComponentProject />
       <Projects />

@@ -1,4 +1,5 @@
 export const allProjectDetails = [
+  //single select
   {
     id: "SmartSelect", // always kebab-case (URL friendly)
     title: "Smart Select",
@@ -88,6 +89,8 @@ export const allProjectDetails = [
 
     createdAt: "2026-04-29",
   },
+
+  // feature highlight
   {
     id: "feature-highlight",
 
@@ -193,6 +196,8 @@ export const allProjectDetails = [
       "Add size variants (small, medium, large)",
     ],
   },
+
+  // sidebar
   {
     id: "sidebar", // always kebab-case (URL friendly)
     title: "Sidebar",
@@ -277,6 +282,8 @@ export const allProjectDetails = [
 
     createdAt: "2026-04-29",
   },
+
+  //date formatter
   {
     id: "dateFormatter", // always kebab-case (URL friendly)
     title: "Date Formatter",
@@ -412,6 +419,7 @@ usFormat            → "10/29/2024"
     createdAt: "2026-04-29",
   },
 
+  // pdf generator
   {
     id: "pdfGenerator",
     title: "Custom PDF Generator (JSON to PDF)",
@@ -423,7 +431,8 @@ usFormat            → "10/29/2024"
 
     implementation: {
       type: "code",
-      message:"Under development. Contact for early access and collaboration opportunities.",
+      message:
+        "Under development. Contact for early access and collaboration opportunities.",
       demo: "",
       source: "",
     },
@@ -477,6 +486,7 @@ usFormat            → "10/29/2024"
     createdAt: "2026-04-29",
   },
 
+  // progress bar
   {
     title: "Progress Bar",
     id: "progressBar",
@@ -488,7 +498,8 @@ usFormat            → "10/29/2024"
 
     implementation: {
       type: "code",
-      message:"Under development. Contact for early access and collaboration opportunities.",
+      message:
+        "Under development. Contact for early access and collaboration opportunities.",
       demo: "",
       source: "",
     },
@@ -532,6 +543,7 @@ usFormat            → "10/29/2024"
     createdAt: "2026-04-29",
   },
 
+  // chart
   {
     title: "Chart",
     id: "chart",
@@ -543,7 +555,8 @@ usFormat            → "10/29/2024"
 
     implementation: {
       type: "code",
-      message:"Under development. Contact for early access and collaboration opportunities.",
+      message:
+        "Under development. Contact for early access and collaboration opportunities.",
       demo: "",
       source: "",
     },
@@ -587,6 +600,7 @@ usFormat            → "10/29/2024"
     createdAt: "2026-04-29",
   },
 
+  // Input
   {
     title: "Input",
     id: "input",
@@ -598,7 +612,8 @@ usFormat            → "10/29/2024"
 
     implementation: {
       type: "code",
-      message:"Under development. Contact for early access and collaboration opportunities.",
+      message:
+        "Under development. Contact for early access and collaboration opportunities.",
       demo: "",
       source: "",
     },
@@ -642,6 +657,7 @@ usFormat            → "10/29/2024"
     createdAt: "2026-04-29",
   },
 
+  // multi select dropdown
   {
     title: "Multi Select Dropdown",
     id: "multiSelectDropdown",
@@ -653,7 +669,8 @@ usFormat            → "10/29/2024"
 
     implementation: {
       type: "code",
-      message:"Under development. Contact for early access and collaboration opportunities.",
+      message:
+        "Under development. Contact for early access and collaboration opportunities.",
       demo: "",
       source: "",
     },
@@ -698,6 +715,7 @@ usFormat            → "10/29/2024"
     createdAt: "2026-04-29",
   },
 
+  // badge
   {
     title: "Badge",
     id: "badge",
@@ -709,7 +727,8 @@ usFormat            → "10/29/2024"
 
     implementation: {
       type: "code",
-      message:"Under development. Contact for early access and collaboration opportunities.",
+      message:
+        "Under development. Contact for early access and collaboration opportunities.",
       demo: "",
       source: "",
     },
@@ -743,6 +762,240 @@ usFormat            → "10/29/2024"
     challenges: ["Maintaining consistent styles"],
 
     improvements: ["Add icons support", "Add color variants"],
+
+    status: "Completed",
+    createdAt: "2026-04-29",
+  },
+
+  // smart search (all feature of - github global smart search bar feature)
+  {
+    title: "Smart Search (GitHub-like)",
+    id: "smartSearch",
+    tagline:
+      "Powerful global search with filters, shortcuts, and real-time results",
+
+    description:
+      "A GitHub-inspired global smart search component that allows users to quickly search across multiple data types (projects, users, tags, etc.) with keyboard shortcuts, fuzzy matching, and categorized results. Designed for high performance and scalability in large applications.",
+
+    implementation: {
+      type: "code",
+      message:
+        "Under development. Contact for early access and collaboration opportunities.",
+      demo: "https://your-demo-link.com",
+      source: "https://github.com/your-repo",
+    },
+
+    documentation: {
+      overview:
+        "SmartSearch is a global command/search bar similar to GitHub (Ctrl + K). It supports multi-entity search, fuzzy matching, keyboard navigation, and real-time filtering.",
+
+      props: [
+        { name: "data", type: "SearchItem[]", required: true },
+        { name: "placeholder", type: "string", required: false },
+        { name: "onSelect", type: "(item) => void", required: true },
+        { name: "debounceTime", type: "number", required: false },
+      ],
+
+      usage: `
+<SmartSearch
+  data={searchData}
+  placeholder="Search anything..."
+  debounceTime={300}
+  onSelect={(item) => console.log(item)}
+/>
+`,
+    },
+
+    features: [
+      "Global search (Ctrl + K / Cmd + K)",
+      "Debounced input for performance",
+      "Fuzzy search (partial + typo tolerance)",
+      "Categorized results (Projects, Users, Tags)",
+      "Keyboard navigation (↑ ↓ Enter Esc)",
+      "Recent searches history",
+      "Highlight matched text",
+      "Dynamic filtering",
+      "Dark/light mode support",
+    ],
+
+    implementedTechnologies: ["React", "TypeScript", "Tailwind CSS"],
+
+    complexity: "High",
+    category: "UI",
+    tags: ["search", "global-search", "command-palette", "ui"],
+
+    useCases: [
+      "Dashboard global navigation",
+      "Large data applications (admin panels)",
+      "Command palette like GitHub / VS Code",
+      "Quick access to features",
+    ],
+
+    challenges: [
+      "Optimizing performance for large datasets",
+      "Implementing keyboard accessibility",
+      "Handling fuzzy search efficiently",
+      "Managing focus and UX consistency",
+    ],
+
+    improvements: [
+      "Integrate with backend search (ElasticSearch)",
+      "Add AI-based search suggestions",
+      "Voice search support",
+      "Advanced filters (date, type, owner)",
+    ],
+
+    status: "Completed",
+    createdAt: "2026-04-29",
+  },
+
+  // tab
+  {
+    title: "Tab",
+    id: "tab",
+    tagline: "Reusable and accessible tab navigation component",
+
+    description:
+      "A flexible and reusable tab component for switching between different views or sections. Built with accessibility and performance in mind, supporting controlled and uncontrolled states.",
+
+    implementation: {
+      type: "code",
+      message:
+        "Under development. Contact for early access and collaboration opportunities.",
+      demo: "https://your-demo-link.com",
+      source: "https://github.com/your-repo",
+    },
+
+    documentation: {
+      overview:
+        "Tabs allow users to switch between different sections of content. Supports horizontal/vertical layouts and controlled state.",
+
+      props: [
+        { name: "tabs", type: "TabItem[]", required: true },
+        { name: "defaultActive", type: "string", required: false },
+        { name: "onChange", type: "(id: string) => void", required: false },
+        { name: "variant", type: "'line' | 'pill'", required: false },
+      ],
+
+      usage: `
+<Tabs
+  tabs={[
+    { id: "home", label: "Home", content: <Home /> },
+    { id: "profile", label: "Profile", content: <Profile /> },
+  ]}
+  defaultActive="home"
+/>
+`,
+    },
+
+    features: [
+      "Reusable component",
+      "Controlled & uncontrolled modes",
+      "Keyboard navigation support",
+      "Accessible (ARIA roles)",
+      "Multiple variants (line, pill)",
+      "Smooth transitions",
+      "Responsive design",
+    ],
+
+    implementedTechnologies: ["React", "TypeScript", "Tailwind CSS"],
+
+    complexity: "Medium",
+    category: "UI",
+    tags: ["tabs", "navigation", "ui"],
+
+    useCases: [
+      "Dashboard sections",
+      "Profile pages",
+      "Settings panels",
+      "Content switching UI",
+    ],
+
+    challenges: [
+      "Managing active state cleanly",
+      "Ensuring accessibility compliance",
+      "Handling dynamic content rendering",
+    ],
+
+    improvements: [
+      "Add animation library (Framer Motion)",
+      "Lazy load tab content",
+      "Add vertical tabs support",
+    ],
+
+    status: "Completed",
+    createdAt: "2026-04-29",
+  },
+
+  // Side-sheet
+  {
+    title: "Side Sheet",
+    id: "sideSheet",
+    tagline: "Slide-in panel for secondary content and actions",
+
+    description:
+      "A responsive side sheet (drawer) component that slides in from the left or right. Ideal for forms, filters, and additional content without navigating away from the main screen.",
+
+    implementation: {
+      type: "code",
+      message:
+        "Under development. Contact for early access and collaboration opportunities.",
+      demo: "https://your-demo-link.com",
+      source: "https://github.com/your-repo",
+    },
+
+    documentation: {
+      overview:
+        "SideSheet is used to display additional content in a sliding panel. It supports multiple positions and controlled visibility.",
+
+      props: [
+        { name: "open", type: "boolean", required: true },
+        { name: "onClose", type: "() => void", required: true },
+        { name: "position", type: "'left' | 'right'", required: false },
+        { name: "width", type: "string", required: false },
+      ],
+
+      usage: `
+<SideSheet open={isOpen} onClose={() => setIsOpen(false)}>
+  <p>Content goes here</p>
+</SideSheet>
+`,
+    },
+
+    features: [
+      "Slide-in animation",
+      "Overlay background",
+      "Close on outside click",
+      "Escape key support",
+      "Reusable and composable",
+      "Responsive design",
+      "Supports left/right positions",
+    ],
+
+    implementedTechnologies: ["React", "TypeScript", "Tailwind CSS"],
+
+    complexity: "Medium",
+    category: "UI",
+    tags: ["drawer", "side-sheet", "ui"],
+
+    useCases: [
+      "Filters panel",
+      "Settings drawer",
+      "Form input without navigation",
+      "Mobile navigation menu",
+    ],
+
+    challenges: [
+      "Managing body scroll lock",
+      "Handling animations smoothly",
+      "Accessibility (focus trap)",
+    ],
+
+    improvements: [
+      "Add focus trapping",
+      "Add animation with Framer Motion",
+      "Add multiple size variants",
+    ],
 
     status: "Completed",
     createdAt: "2026-04-29",
