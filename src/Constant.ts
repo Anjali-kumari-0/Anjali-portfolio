@@ -6,6 +6,9 @@ import {
   Briefcase,
   GraduationCap,
 } from "lucide-react";
+import portfolio from "./assets/porfolio.png"
+import chatApp from "./assets/chatApp1.png"
+import customComp from "./assets/customComp.png"
 export const footerData = {
   logo: "AK",
   name: "Anjali",
@@ -305,7 +308,7 @@ export const projectsData = [
     title: "Portfolio Website",
     description:
       "Interactive portfolio showcase with smooth animations, dark mode support, and responsive design across all devices.",
-    image: "src/assets/porfolio.png",
+    image: portfolio,
     category: "tailwind",
     tags: ["React", "Tailwind", "Animations"],
     links: {
@@ -330,7 +333,7 @@ export const projectsData = [
     title: "Chat Application",
     description:
       "Real-time messaging application with WebSocket integration, user presence indicators, and message history.",
-    image: "src/assets/chatApp1.png",
+    image: chatApp,
     category: "node",
     tags: ["React", "Node.js", "WebSocket"],
     links: {
@@ -355,7 +358,7 @@ export const projectsData = [
     title: "UI Component Library",
     description:
       "A reusable UI component library built 'Single_select', 'multi_select' etc...",
-    image: "src/assets/customComp.png",
+    image: customComp,
     category: "frontend",
     tags: ["React", "TypeScript", "Tailwind"],
     links: {
