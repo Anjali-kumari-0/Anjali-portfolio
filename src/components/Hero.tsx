@@ -173,7 +173,7 @@ export default function Hero() {
 
         <div className="flex gap-4 mt-8">
           <Button >🚀 View My Work</Button>
-          <Button variant="secondary" onClick={() => window.open("public/resume.pdf", "_blank")}>📄 Download Resume</Button>
+          <Button variant="secondary" onClick={() => window.open("public/resume1.pdf", "_blank")}>📄 Download Resume</Button>
         </div>
       </div>
 
