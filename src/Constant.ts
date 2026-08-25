@@ -9,6 +9,7 @@ import {
 import portfolio from "./assets/porfolio.png"
 import chatApp from "./assets/chatApp1.png"
 import customComp from "./assets/customComp.png"
+import pdftochat from "./assets/pdftochat.png"
 export const footerData = {
   logo: "AK",
   name: "Anjali",
@@ -77,9 +78,9 @@ export const experienceData = [
   {
     id: 2,
     type: "job",
-    title: "Team Lead",
+    title: "Senior Software Engineer",
     company: "Maya Data Privacy",
-    period: "2023 - on going",
+    period: "2025 - on going",
     description:
       "Developed responsive web applications using React and Tailwind CSS, improved application performance by 40%, collaborated with design and backend teams.",
     skills: ["React", "Tailwind CSS", "REST APIs"],
@@ -88,9 +89,9 @@ export const experienceData = [
   {
     id: 3,
     type: "education",
-    title: "Full Time Associate Developer",
+    title: "Software Engineer",
     company: "Maya Data Privacy",
-    period: "2023 - 2024",
+    period: "2023 - 2025",
     description:
       "Comprehensive bootcamp covering modern web development with focus on React, JavaScript, and full-stack development.",
     skills: ["React", "JavaScript", "Node.js"],
@@ -305,15 +306,15 @@ export const projectsData = [
   // },
   {
     id: 3,
-    title: "Portfolio Website",
+    title: "DocuVerse AI– PDF to Chat Application",
     description:
-      "Interactive portfolio showcase with smooth animations, dark mode support, and responsive design across all devices.",
-    image: portfolio,
+      " Developed an AI-powered PDF assistant using Next.js, LangChain, RAG, Chroma Vector Database and OpenAI compatible LLMs, enabling document-based conversational search.",
+    image: pdftochat,
     category: "tailwind",
-    tags: ["React", "Tailwind", "Animations"],
+    tags: ["Next.js", "AI API Integration"],
     links: {
-      github: "https://github.com/Anjali-kumari-0/Anjali-portfolio",
-      live: "https://anjali-portfolio-wheat.vercel.app/",
+      github: "https://github.com/Anjali-kumari-0/DocuVerse-ai",
+      live: "https://docuverse-blush.vercel.app/",
     },
   },
   // {

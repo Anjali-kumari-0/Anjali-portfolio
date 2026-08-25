@@ -1,7 +1,7 @@
 export const techStack = [
   { name: "React", image: "src/assets/reactsvg.svg" },
   { name: "TypeScript", image: ".././assets/typescript.png" },
-  { name: "Springboot", image: ".././assets/springboot.png" },
+  { name: "JavaScript", image: ".././assets/typescript.png" },
   { name: "AWS", image: ".././assets/aws.png" },
   { name: "MySQL", image: ".././assets/mysql.png" },
   { name: "Postgress", image: ".././assets/postgress.png" },
@@ -10,5 +10,7 @@ export const techStack = [
   { name: "MongoDB", image: ".././assets/mongodb.png" },
   { name: "Tailwind", image: ".././assets/tailwind.png" },
   { name: "Next.js", image: ".././assets/nextjs.png" },
-  { name: "GitHub", image: ".././assets/github.png" },
+  { name: "Git/GitHub", image: ".././assets/github.png" },
+  { name: "AI API Integration", image: ".././assets/github.png" },
+  { name: "Payment gateway", image: ".././assets/github.png" },
 ];
